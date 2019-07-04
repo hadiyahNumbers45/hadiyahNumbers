@@ -122,7 +122,7 @@ font-size:14px;
 </div>
 <!--end Header-->
 </header>
-<br></br></br>
+
 <div>
 @yield('content')
 </div>
