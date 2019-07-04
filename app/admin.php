@@ -11,3 +11,4 @@ class Admin extends Model
     protected $fillable={'id','fName','sName','lName','email'};
     protected $hidden = ['password'];
 }
+cdfszdfsA
