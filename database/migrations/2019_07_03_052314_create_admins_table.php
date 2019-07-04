@@ -25,7 +25,7 @@ class CreateAdminsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *            $table->increments('id');
+     *          test test  $table->increments('id');
 
      *
      * @return void
