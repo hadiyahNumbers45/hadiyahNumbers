@@ -14,7 +14,7 @@ class CreateAtonementAndZakaatFormsTable extends Migration
     public function up()
     {
         Schema::create('atonement__and__zakaat__forms', function (Blueprint $table) {
-<<<<<<< HEAD
+
           $table->increments('id')->unique();
           $table->string('date');
           $table->string('day');
@@ -25,10 +25,7 @@ class CreateAtonementAndZakaatFormsTable extends Migration
       Schema::table('atonement__and__zakaat__forms', function($table) {
           $table->foreign('observe_id')->references('id')->on('observers');
            $table->foreign('service_id')->references('id')->on('services');
-=======
-            $table->bigIncrements('id');
-            $table->timestamps();
->>>>>>> d3f4f3d0f49b14c392379f36b49738cace24f0fc
+
         });
     }
 
