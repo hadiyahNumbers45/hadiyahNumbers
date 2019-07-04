@@ -55,9 +55,6 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 </script>
-
-
-
     <div class="container">
         <div class="table-wrapper">
             <div class="table-title">
