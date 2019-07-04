@@ -19,7 +19,7 @@ class CreateBloodOfAlgebratFormsTable extends Migration
           $table->string('date');
           $table->string('day');
           $table->integer('observe_id')->unsigned();
-          $table->integer('count_of_agencies')
+          $table->integer('count_of_agencies');
           $table->integer('service_id')->unsigned();
       });
       Schema::table('blood__of__algebrat__forms', function($table) {

@@ -19,7 +19,7 @@ class CreateAtonementAndZakaatFormsTable extends Migration
           $table->string('date');
           $table->string('day');
           $table->integer('observe_id')->unsigned();
-          $table->integer('count')
+          $table->integer('count');
           $table->integer('service_id')->unsigned();
       });
       Schema::table('atonement__and__zakaat__forms', function($table) {
