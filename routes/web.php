@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('home');
 });
-d
+
 Route::get('/GUIProgram', function () {
     return view('GUIProgram');
 });
