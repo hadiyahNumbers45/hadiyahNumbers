@@ -22,5 +22,5 @@ class Body_Food_Form extends Model
     public function material(){
       return $this ->belongsToMany('App\Material');
     }
-  
+
 }

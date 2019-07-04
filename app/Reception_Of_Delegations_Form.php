@@ -20,7 +20,9 @@ class Reception_Of_Delegations_Form extends Model
     public function delegation(){
       return $this ->hasOne('App\Delegation');
     }
-    
+    public function reception_of_delegations_form(){
+      return $this ->hasOne('App\Reception_Of_Delegations_Form');
+    }
 
 
 }
