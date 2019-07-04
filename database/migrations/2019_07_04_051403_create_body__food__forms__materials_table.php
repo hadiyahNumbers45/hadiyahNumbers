@@ -18,9 +18,7 @@ class CreateBodyFoodFormsMaterialsTable extends Migration
           $table->foreign('material_id')->references('material_id')->on('materials');
           $table->integer('count');
           $table->integer('surplus');
-          $table->integer('needs_of_tomorro
-
-');
+          $table->integer('needs_of_tomorro');
 
 
             $table->timestamps();
@@ -28,8 +26,8 @@ class CreateBodyFoodFormsMaterialsTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
-     *
+     *  Reverse the migrations.
+     * تيسسسسسسسسسسسسسسسسسسسسسسسسسست
      * @return void
      */
     public function down()
