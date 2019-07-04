@@ -2,13 +2,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <meta charset="utf-8"/>
+   <link rel="shortcut icon" href="https://static.wixstatic.com/media/3b6b39_bb987794acef40cb9fcab1bc18e04d33%7Emv2_d_1292_1453_s_2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/3b6b39_bb987794acef40cb9fcab1bc18e04d33%7Emv2_d_1292_1453_s_2.png" type="image/png"/>
+   <link rel="stylesheet" href="css/fonts.css"/>
+
 <style>
 body{
-font-family:Roboto;
+font-family:GE Contrast Bold;
 }
 .menu
 {
-background-color: #296D51;
+background-color:white; #296D51;
 border-bottom: 4px solid #4f5467;
 width:100%;
 height: auto;
@@ -26,7 +30,7 @@ font-weight: bold;
 .menu  .navbar-nav >  li >  a
 {
 font-size: 13px;
-color: white;
+color: #296D51;
 padding: 10px 35px;
 }
 .menu  .navbar-nav >  li >  a:hover
@@ -51,6 +55,9 @@ padding: 5px 3px;
 text-decoration: none;
 color: #04A3ED;
 }
+.nameOfOrg{display: inline;
+margin: 5px;
+color: #296D51}
 footer{
 background-color:  #009973;
 padding:30px 0px;
@@ -86,6 +93,7 @@ color:#FFF;
 margin-right: 15px;
 font-size:14px;
 }
+
 </style>
 <title>@yield('title')</title>
 </head>
@@ -99,7 +107,8 @@ font-size:14px;
 <div class="menu">
     <div class="container-fluid">
     <div class="navbar-header">
-
+        <a href="/" title="الرئيسية"><img src="imgs\hadiyahLogo.png" alt=""width="40px"></a>
+        <h4 class="nameOfOrg">هدية الحاج والمتعمر</h4>
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
