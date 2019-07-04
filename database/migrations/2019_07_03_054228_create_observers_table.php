@@ -21,15 +21,16 @@ class CreateObserversTable extends Migration
           $table->string('location');
           $table->string('email')->unique();
           $table->string('password',255);
-        //  $table->integer('program_id')->unsigned();
-      //    $table->foreign('program_id');
-        /* * $table->foreign('program_id')->reference('id')->on('programs');
+          $table->integer('program_id')->unsigned();
           $table->integer('superviser_id')->unsigned();
-          $table->foreign('superviser_id')->reference('id')->on('supervisers');
-          */
 
 
+      });
+      Schema::table('services', function($table) {
+            $table->foreign('program_id')->references('id')->on('programs');
+            $table->foreign('superviser_id')->references('id')->on('supervisers');
         });
+        
     }
 
     /**
