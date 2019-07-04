@@ -14,8 +14,7 @@ class CreateBodyFoodFormsTable extends Migration
     public function up()
     {
         Schema::create('body__food__forms', function (Blueprint $table) {
-<<<<<<< HEAD
-            $table->bigIncrements('id');
+            $table->bigIncrements('form_id');
             $table->date('date');
             $table->string('day');
             $table->string('city');
@@ -26,14 +25,7 @@ class CreateBodyFoodFormsTable extends Migration
             $table->foreign('observe_id')->references('id')->on('observers');
             $table->foreign('service_id')->references('id')->on('services');
             $table->text('observation');
-
-
-
             $table->timestamps();
-=======
-          $table->increments('id')->unique();
-
->>>>>>> 5aa4a72d31e12bc9ac43d605046d9c9ab5ec9639
         });
     }
 

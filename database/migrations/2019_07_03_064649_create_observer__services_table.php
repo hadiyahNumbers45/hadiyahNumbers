@@ -18,17 +18,11 @@ class CreateObserverServicesTable extends Migration
         //  $table->foreign('observer_id')->references('id')->on('observers');
           $table->integer('services_id')->unsigned();
         //  $table->foreign('services_id')->references('id')->on('services');
-
+        $table->foreign('observer_id')->references('id')->on('observers');
+        $table->foreign('services_id')->references('id')->on('services');
         });
-
-        Schema::table('observer__services', function($table) {
-              $table->foreign('observer_id')->references('id')->on('observers');
-              $table->foreign('services_id')->references('id')->on('services');
-          });
 //add
-      
-
-
+  
     }
 
     /**

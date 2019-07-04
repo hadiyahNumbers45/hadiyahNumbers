@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Body_Food_Form extends Model
 {
     //
-<<<<<<< HEAD
-=======
     protected $fillable={'form_id','city','date','day','location','evaluation','nu_service_providers','number_of_deneficiaries','observe_id','service_id','observation'};
     protected  $primarykey='form_id';
 
@@ -25,5 +23,4 @@ class Body_Food_Form extends Model
       return $this ->belongsToMany('App\Material');
     }
 
->>>>>>> 5aa4a72d31e12bc9ac43d605046d9c9ab5ec9639
 }

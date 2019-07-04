@@ -19,12 +19,10 @@ class CreateServicesTable extends Migration
             $table->string('description',255);
             $table->integer('program_id')->unsigned();
           //  $table->foreign('program_id')->references('id')->on('programs');
-        });
-        Schema::table('services', function($table) {
-              $table->foreign('program_id')->references('id')->on('programs');
-          });
+          $table->foreign('program_id')->references('id')->on('programs');
 
-    }
+        });
+      }
 
     /**
      * Reverse the migrations.

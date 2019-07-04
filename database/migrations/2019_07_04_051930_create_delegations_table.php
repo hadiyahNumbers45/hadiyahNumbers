@@ -14,9 +14,6 @@ class CreateDelegationsTable extends Migration
     public function up()
     {
         Schema::create('delegations', function (Blueprint $table) {
-<<<<<<< HEAD
-            $table->bigIncrements('id');
-=======
             $table->increments('id')->unique();
             $table->string('nationality');
             $table->string('address_in_mecca');
@@ -29,7 +26,6 @@ class CreateDelegationsTable extends Migration
             $table->string('number_of_women');
             $table->string('number_of_children');
             $table->string('number_of_men');
->>>>>>> 5aa4a72d31e12bc9ac43d605046d9c9ab5ec9639
             $table->timestamps();
         });
     }
