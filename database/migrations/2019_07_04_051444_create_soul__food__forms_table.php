@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInstitutionsTable extends Migration
+class CreateSoulFoodFormsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateInstitutionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('institutions', function (Blueprint $table) {
-            $table->increments('id')->unique();
-            $table->string('name');
+        Schema::create('soul__food__forms', function (Blueprint $table) {
+          $table->increments('id')->unique();
         });
     }
 
@@ -26,6 +25,6 @@ class CreateInstitutionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('institutions');
+        Schema::dropIfExists('soul__food__forms');
     }
 }

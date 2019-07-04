@@ -7,21 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 class Material extends Model
 {
     //
-      protected $fillable={'Name'};
+      protected $fillable={'name'};
 
 
-      public function fBodyFood(){
-        return $this ->belongsToMany('App\FBodyFood');
+      public function body_food_form(){
+        return $this ->belongsToMany('App\Body_Food_Form');
       }
 
-      public function fSoulFood (){
-        return $this ->belongsToMany('App\FSoulFood ');
+      public function care_form (){
+        return $this ->belongsToMany('App\Care_Form ');
       }
-      public function fCare (){
-        return $this ->belongsToMany('App\FCare ');
+      public function hospitable_form (){
+        return $this ->belongsToMany('App\Hospitable_Form ');
       }
-      public function fHospitable(){
-        return $this ->belongsToMany('App\FHospitable');
+      public function soul_food_form(){
+        return $this ->belongsToMany('App\Soul_Food_Form');
       }
-      
+
 }

@@ -8,8 +8,8 @@ class IT extends Model
 {
     //
     public $incrementing=false;
-    protected $fillable={'id','fName','sName','lName','email'};
+    protected $fillable={'id','f_name','s_name','l_name','email'};
     protected $hidden = ['password'];
 
-    
+
 }

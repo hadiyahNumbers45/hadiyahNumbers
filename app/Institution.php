@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Institution extends Model
 {
     //
-    protected $fillable={'Name'};
+    protected $fillable={'name'};
 
 
-    public function fAtonementAndZakaatInstitution(){
-      return $this ->belongsToMany('App\FAtonementAndZakaatInstitution_Institution');
+    public function atonement_and_zakaat_form(){
+      return $this ->belongsToMany('App\Atonement_And_Zakaat_Form');
     }
 
-    public function fBloodOfAlgebratInstitution (){
-      return $this ->belongsToMany('App\FBloodOfAlgebratInstitution_Institution' ');
+    public function blood_of_algebrat_form (){
+      return $this ->belongsToMany('App\Blood_Of_Algebrat_Form' ');
     }
 }
