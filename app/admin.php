@@ -4,7 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class admin extends Model
+class Admin extends Model
 {
     //
+    public $incrementing=false;
+    protected $fillable={'id','fName','sName','lName','email'};
+    protected $hidden = ['password'];
 }
