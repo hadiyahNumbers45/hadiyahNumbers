@@ -14,11 +14,8 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-<<<<<<< HEAD
             $table->increments('id')->unique();
-=======
-            $table->increments('id');
->>>>>>> b4cac6682832ce98f836a8a42a57732744f0d163
+
             $table->string('f_name');
             $table->string('s_name');
             $table->string('l_name');
