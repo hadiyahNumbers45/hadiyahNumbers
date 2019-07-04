@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Program extends Model
 {
     //
-    protected $fillable={'name','location'};
+    protected $fillable={'name','description'};
 
     public function superviser(){
       return $this ->hasOne('App\Superviser');

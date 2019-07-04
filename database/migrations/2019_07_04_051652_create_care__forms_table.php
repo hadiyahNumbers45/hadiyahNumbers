@@ -14,6 +14,7 @@ class CreateCareFormsTable extends Migration
     public function up()
     {
         Schema::create('care__forms', function (Blueprint $table) {
+<<<<<<< HEAD
           $table->bigIncrements('form_id');
           $table->date('date');
           $table->string('day');
@@ -26,6 +27,10 @@ class CreateCareFormsTable extends Migration
           $table->foreign('service_id')->references('id')->on('services');
           $table->text('observation');
             $table->timestamps();
+=======
+          $table->increments('id')->unique();
+
+>>>>>>> 5aa4a72d31e12bc9ac43d605046d9c9ab5ec9639
         });
     }
 

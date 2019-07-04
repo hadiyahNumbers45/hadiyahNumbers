@@ -14,7 +14,22 @@ class CreateDelegationsTable extends Migration
     public function up()
     {
         Schema::create('delegations', function (Blueprint $table) {
+<<<<<<< HEAD
             $table->bigIncrements('id');
+=======
+            $table->increments('id')->unique();
+            $table->string('nationality');
+            $table->string('address_in_mecca');
+            $table->string('address_in_madinah');
+            $table->string('arrival_time');
+            $table->string('date_of_arrival');
+            $table->string('date_of_Visit');
+            $table->string('visit_time');
+            $table->string('contact_number');
+            $table->string('number_of_women');
+            $table->string('number_of_children');
+            $table->string('number_of_men');
+>>>>>>> 5aa4a72d31e12bc9ac43d605046d9c9ab5ec9639
             $table->timestamps();
         });
     }
