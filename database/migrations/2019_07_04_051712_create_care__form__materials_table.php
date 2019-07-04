@@ -14,18 +14,13 @@ class CreateCareFormMaterialsTable extends Migration
     public function up()
     {
         Schema::create('care__form__materials', function (Blueprint $table) {
-            $table->integer('material_id')->unsigned();
-            $table->integer('care_form_id')->unsigned();
-            $table->integer('count');
 
-
-
-            });
-
-            Schema::table('care__form__materials', function($table) {
-                  $table->foreign('material_id')->references('id')->on('materials');
-                  $table->foreign('care_form_id')->references('id')->on('care__forms');
-              });
+            $table->bigIncrements('id');
+          $table->foreign('form_id')->references('form_id')->on('body__food__forms');
+          $table->foreign('material_id')->references('material_id')->on('materials');
+          $table->integer('count');
+            $table->timestamps();
+        });
     }
 
     /**

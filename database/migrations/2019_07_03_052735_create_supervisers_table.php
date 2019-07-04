@@ -21,12 +21,11 @@ class CreateSupervisersTable extends Migration
             $table->string('email')->unique();
             $table->string('password',255);
             $table->integer('admin_id')->unsigned();
-            //$table->integer('program_id')->unsigned();
+            $table->integer('program_id')->unsigned();
 
         });
         Schema::table('supervisers', function($table) {
-
-              //$table->foreign('program_id')->references('id')->on('programs');
+              $table->foreign('program_id')->references('id')->on('programs');
               $table->foreign('admin_id')->references('id')->on('admins');
           });
 
