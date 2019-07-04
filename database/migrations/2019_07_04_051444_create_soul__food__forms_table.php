@@ -14,6 +14,10 @@ class CreateSoulFoodFormsTable extends Migration
     public function up()
     {
         Schema::create('soul__food__forms', function (Blueprint $table) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 95c78de2909b7e32142a949b2a230f3efc486687
             $table->bigIncrements('form_id');
             $table->date('date');
             $table->string('day');
@@ -25,7 +29,12 @@ class CreateSoulFoodFormsTable extends Migration
             $table->foreign('observe_id')->references('id')->on('observers');
             $table->foreign('service_id')->references('id')->on('services');
             $table->text('observation');
+<<<<<<< HEAD
             $table->timestamps();
+=======
+            
+
+>>>>>>> 95c78de2909b7e32142a949b2a230f3efc486687
         });
     }
 
