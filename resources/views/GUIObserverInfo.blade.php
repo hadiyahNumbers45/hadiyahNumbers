@@ -3,7 +3,7 @@
 observer informaiton
 @endsection
 @section('content')
-</br></br>
+</br></br></br></br></br>
 <html lang="ar">
 <head>
 <meta charset="utf-8">

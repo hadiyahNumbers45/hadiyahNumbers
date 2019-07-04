@@ -2,43 +2,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-  body{
+<style>
+body{
 font-family:Roboto;
 }
-
 .menu
 {
-background-color: black;
+background-color: #296D51;
 border-bottom: 4px solid #4f5467;
 width:100%;
 height: auto;
-padding: 0 10px;
+padding: 20px 10px;
 position: fixed;
-margin: 0px;
 z-index: 1;
 opacity: 0.9;
 }
-
 .menu  .navbar-nav > .active > a
 {
 background-color : #4f5467;
 color: white;
 font-weight: bold;
 }
-
 .menu  .navbar-nav >  li >  a
 {
 font-size: 13px;
 color: white;
 padding: 10px 35px;
-
 }
 .menu  .navbar-nav >  li >  a:hover
 {
-background-color: #4f5467;
+background-color:#F0F4F2;
+color: #296D51;
 }
-
 .navbar-header {
 padding: 10px;
 }
@@ -64,7 +59,6 @@ padding:30px 0px;
 footer ul li{
 padding:5px 0px;
 }
-
 .adress span , .contact span , .social span{
 color: #FFF;
 font-weight: 800;
@@ -75,29 +69,25 @@ text-transform: uppercase;
 font-size: 20px;
 letter-spacing: 3px;
 }
-
 .adress li p , .contact li a , .social li a{
 color:#FFF;
 letter-spacing: 2px;
 text-decoration:none;
 font-size:15px;
 }
-
 .social li{
 float:left;
 }
-
 .adress , .contact , .social {
 list-style: none;
 }
-
 .fa{
 color:#FFF;
 margin-right: 15px;
 font-size:14px;
 }
-  </style>
-  <title>@yield('title')</title>
+</style>
+<title>@yield('title')</title>
 </head>
 <body>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -109,12 +99,10 @@ font-size:14px;
 <div class="menu">
     <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#"><span class="glyphicon glyphicon-user"></span> Email: .... </a>
-      <a href="#"><span class="glyphicon glyphicon-phone"></span> Mobile: .... </a>
+
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
-
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> تسجيل الدخول</a></li>
       </ul>
     </div>
@@ -122,7 +110,6 @@ font-size:14px;
 </div>
 <!--end Header-->
 </header>
-
 <div>
 @yield('content')
 </div>
