@@ -14,10 +14,10 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('fName');
-            $table->string('sName');
-            $table->string('lName');
+            $table->increments('id');
+            $table->string('f_name');
+            $table->string('s_name');
+            $table->string('l_name');
             $table->string('email')->unique();
             $table->string('password',255);
         });
@@ -25,6 +25,8 @@ class CreateAdminsTable extends Migration
 
     /**
      * Reverse the migrations.
+     *            $table->increments('id');
+
      *
      * @return void
      */
