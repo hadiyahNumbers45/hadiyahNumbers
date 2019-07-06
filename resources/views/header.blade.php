@@ -47,7 +47,7 @@ font-family: 'Ubuntu Condensed', sans-serif;
 padding: 0px;
 margin: 0px;
 text-decoration: none;
-color: white;
+color: black;
 font-size: 13px;
 padding: 5px 3px;
 }
