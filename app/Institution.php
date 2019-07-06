@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Institution extends Model
 {
     //
-    protected $fillable={'name'};
+    protected $fillable=['name'];
+    $timestam=false;
 
 
     public function atonement_and_zakaat_form(){
