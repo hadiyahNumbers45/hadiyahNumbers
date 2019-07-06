@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Adoption_Of_The_Committee extends Model
 {
     //
-    protected $fillable=[]'form_id','name','observation'];
+    protected $fillable=['form_id','name','observation'];
     public $incrementing=false;
     protected  $primarykey='form_id';
     $timestam=false;

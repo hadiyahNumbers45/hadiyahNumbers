@@ -8,7 +8,6 @@ class Service extends Model
 {
     //
     protected $fillable=['name','description'];
-    $timestam=false;
 
     public function program(){
       return $this ->belongsTO('App\Program');
