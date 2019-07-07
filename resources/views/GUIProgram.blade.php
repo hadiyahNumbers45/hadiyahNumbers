@@ -3,6 +3,7 @@
 رئيس البرامج
 @endsection
 @section('content')
+<<<<<<< HEAD
 <section class="site-section pt-5">
 
   <div id="demo" class="carousel slide" data-ride="carousel">
@@ -88,4 +89,13 @@
 
 
     </section>
+=======
+<h1>Page content</h1>
+
+@foreach ($programs as $rs)
+<a href="{{route('program.show',$rs->id) }}"> {{ $rs->name}} </a>
+ 
+ <br>
+ @endforeach
+>>>>>>> b719784ad5590c2c9fd1f4149a5c42676bf29df4
 @endsection

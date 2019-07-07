@@ -8,8 +8,9 @@ class Observer extends Model
 {
     //
     public $incrementing=false;
-    protected $fillable={'id','f_name','s_name','l_name','email','location','program_id'};
+    protected $fillable=['id','f_name','s_name','l_name','email','location','program_id'];
     protected $hidden = ['password'];
+    $timestam=false;
 
     public function program(){
       return $this ->belongsTo('App\Program');
@@ -42,7 +43,7 @@ class Observer extends Model
     }
 
     public function atonement_and_zakaat_form(){
-      return $this ->belongsToMany('App\Reception_Of_Delegations_Form');
+      return $this ->belongsToMany('App\Atonement_And_Zakaat_Form');
     }
     public function blood_of_algebrat_form(){
       return $this ->belongsToMany('App\Blood_Of_Algebrat_Form');

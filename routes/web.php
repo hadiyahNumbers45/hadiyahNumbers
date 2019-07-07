@@ -42,3 +42,6 @@ Route::get('/GUIit', function () {
     return view('GUIit');
 
 });
+
+Route::resource('/Programs', 'ProgramController');
+Route::get('/Programs/{programs}','ProgramController@show')->name('program.show');

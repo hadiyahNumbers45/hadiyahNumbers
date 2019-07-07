@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Material extends Model
 {
     //
-      protected $fillable={'name'};
+      protected $fillable=['name'];
+      $timestam=false;
 
 
       public function body_food_form(){

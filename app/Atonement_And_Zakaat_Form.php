@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Atonement_And_Zakaat_Form extends Model
 {
     //
-    protected $fillable={'form_id','count','date','day','observe_id','service_id'};
+    protected $fillable=[]'form_id','count','date','day','observe_id','service_id'];
     protected  $primarykey='form_id';
-
+$timestam=false;
 
     public function observe(){
       return $this ->hasOne('App\Observer');
