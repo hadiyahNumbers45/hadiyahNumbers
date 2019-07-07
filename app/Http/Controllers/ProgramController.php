@@ -55,8 +55,6 @@ class ProgramController extends Controller
         //
         $results = DB::select('select * from services where program_id = :id', ['id' => $id]);
         foreach ($results as $result) {
-
-
               echo  $result->name;
 
 };

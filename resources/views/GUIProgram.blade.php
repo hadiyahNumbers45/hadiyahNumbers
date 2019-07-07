@@ -7,6 +7,7 @@ Page title
 
 @foreach ($programs as $rs)
 <a href="{{route('program.show',$rs->id) }}"> {{ $rs->name}} </a>
+ 
  <br>
  @endforeach
 @endsection
