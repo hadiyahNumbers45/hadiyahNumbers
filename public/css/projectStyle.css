@@ -12,7 +12,7 @@ position: fixed;
 top:0;
 margin: 0px;
 z-index: 6;}
-.pagesContent{margin-top: 90px;}
+
 header  .navbar-nav > .active > a
 {
 background-color : #4f5467;
@@ -83,7 +83,7 @@ footer ul li{
 }
 /* personal informatin  */
 .boxInfo {
-  margin-top: 80PX;;
+  margin-top: 80PX;
   padding: 6px;
   background-color: rgb(240, 240, 240);
   text-align: right;
@@ -254,9 +254,7 @@ span.psw {
      width: 100%;
   }
 }
-.pagesContent{
-  margin-top:70px;
-}
+
 /*END of template and start of asayel */
 .carousel-inner img {
     width: 100%;
@@ -4055,3 +4053,6 @@ blockquote p {
   cursor: pointer;
   background-color: #55816B; color:white;}
   .formModel input[type=submit]:hover{opacity: 0.8;}
+
+
+.programs{width: 100%; border-collapse: collapse;}
