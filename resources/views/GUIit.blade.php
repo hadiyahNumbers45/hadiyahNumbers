@@ -5,53 +5,44 @@
 @section('content')
 <section class="site-section pt-5" >
      <div class="container" style="text-align: right;">
-       <table style="width: 100%" dir="rtl">
-         <tr>
-           <th> فتح حساب    </th>
-           <th>تعديل بيانات الموظف </th>
-         </tr>
-         <tr>
-           <td></td>
-           <td><input type="search" id="site-search" name="q">
-           <button>Search</button></td>
-         </tr>
-         <tr>
-           <td> الاسم
-         <input type="text" name="">
-       </td>
-       <td> الاسم
-       </td>
+       <div dir="rtl">
+      //asayel 5/11/1440 at 11:50am
+      <br/>
+            فتح حساب
 
-     </tr>
-     <tr>
-       <td> الرقم الوظيفي
-            <input type="text" name="">
-       </td>
-        <td> الرقم الوظيفي </td>
-     </tr>
-     <tr>
-       <td> الايميل
-<input type="text" name="">
-       </td>
-       <td>  الايميل</td>
-     </tr>
-     <tr>
-       <td>المسمى الوظيفي
-            <input type="text" name="">
-       </td>
-       <td>المسمى الوظيفي</td>
-     </tr>
-     <tr>
-     <td>  كلمة المرور
-          <input type="text" name="">
-      </td>
-   </tr>
-   <tr>
-     <td><input type="submit" name=""></td>
-     <td><input type="submit" name=""></td>
-   </tr>
+    </br>
+      <form method="post" action="test">
+        {{csrf_field()}}
+           الاسم
+         <input type="text" name="f_name">
+         اسم الاب
+          <input type="text" name="s_name">
+          اسم العائلة
+           <input type="text" name="l_name">
 
-   </table>
+         الايميل
+        <input type="text" name="email">
+
+         المسمى الوظيفي
+       </br>
+         <input type="radio" name="jobName" value="observer">  مشرف ميداني
+<input type="radio" name="jobName" value="supervisor"> مشرف برنامج
+<input type="radio" name="jobName" value="admin"> رئيس البرامج
+
+</br>
+
+موقع الموظف
+</br>
+ <input type="text" name="location">
+</br>
+   كلمة المرور
+   <br/>
+          <input type="password" name="password">
+
+
+  <input type="submit" name="">
+</form>
+</div>
    <br/>
    <br>
                  </div>

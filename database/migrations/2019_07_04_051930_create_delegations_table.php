@@ -26,7 +26,9 @@ class CreateDelegationsTable extends Migration
             $table->string('number_of_women');
             $table->string('number_of_children');
             $table->string('number_of_men');
-            
+            $table->string('departure_time');
+            $table->string('date_of_departure');
+            $table->string('coordinator');
         });
     }
 

@@ -22,6 +22,11 @@ Route::get('/hh', function () {
 Route::get('/GUIProgram', function () {
     return view('GUIProgram');
 });
+/*delegation 8/7/2019*/
+Route::get('/GUIdelegation', function () {
+    return view('GUIdelegation');
+});
+/*delegation 8/7/2019*/
 Route::get('/GUIObserver', function () {
     return view('GUIObserver');
 });
@@ -47,3 +52,12 @@ Route::get('/GUIit', function () {
 
 Route::resource('/Programs', 'ProgramController');
 Route::get('/Programs/{programs}','ProgramController@show')->name('program.show');
+
+/*delegation 8/7/2019
+* '\insert' is action from gui
+*/
+
+Route::post('/insert', 'Cnteoller@insert');
+/*delegation 8/7/2019*/
+
+Rout::post('/test','itController@signup');
