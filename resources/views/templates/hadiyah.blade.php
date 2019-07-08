@@ -37,7 +37,7 @@
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a herf="/home" alt="الرئيسية"><img src="images/hadiyahLogo.png" width="60" /></a></li>
+        <li><a herf="GUIit" alt="الرئيسية"><img src="images/hadiyahLogo.png" width="60" /></a></li>
       </ul>
     </div>
   </div>
@@ -94,9 +94,9 @@
 <!-- end edit window-->
 <!--end Header-->
 </header>
+@displayPersonalInfo
 <div class="pagesContent">
   <!--PROFILE-->
-  @displayPersonalInfo
 @yield('content')
 </div>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

@@ -13,8 +13,10 @@
 
 Route::get('/', function () {
   return view('welcome');
+});
 
-    return view('home');
+Route::get('/hh', function () {
+  return view('hadiyah');
 });
 
 Route::get('/GUIProgram', function () {
