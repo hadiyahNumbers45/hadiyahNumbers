@@ -37,7 +37,7 @@
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a herf="GUIit" alt="الرئيسية"><img src="images/hadiyahLogo.png" width="60" /></a></li>
+        <li><a herf="GUIit" alt="الرئيسية"><img src="images/شعار-هدية-دقة-عالية-1.png" width="120" /></a></li>
       </ul>
     </div>
   </div>
@@ -46,8 +46,8 @@
         <a href="#" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">تعديل كلمة المرور</a>
         <a href="#">تسجيل الخروج</a>
       </div>
-      <span style="font-size:40px;cursor:pointer" onclick="openNav()" class="fa fa-fw fa-user"> <img src="images/avatar.png" width="50"/></span>
-        <span style="cursor:pointer;width:70;" class="fa fa-fw fa-user" onclick="document.getElementById('id01').style.display='block'"> <img src="images/avatar.png" width="50"/></span>
+      <span style="font-size:40px;cursor:pointer; margin-top:10px;" onclick="openNav()" class="fa fa-fw fa-user"></span>
+      <span style="cursor:pointer;font-size:40px; margin-top:10px;" class="fa fa-fw fa-user" onclick="document.getElementById('id01').style.display='block'"></span>
 </div>
 <!--LOGIN-->
 <div id="id01" class="modal">
@@ -94,7 +94,7 @@
 <!-- end edit window-->
 <!--end Header-->
 </header>
-@displayPersonalInfo
+
 <div class="pagesContent">
   <!--PROFILE-->
 @yield('content')

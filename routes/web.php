@@ -60,4 +60,4 @@ Route::get('/Programs/{programs}','ProgramController@show')->name('program.show'
 Route::post('/insert', 'Cnteoller@insert');
 /*delegation 8/7/2019*/
 
-Rout::post('/test','itController@signup');
+Route::post('/test','itController@signup');
