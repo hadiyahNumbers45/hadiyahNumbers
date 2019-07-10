@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <section class="site-section pt-5">
-  <div class="imageOfHadiyah">
+  <div class="imageOfHadiyah" >
     <img src="images/hadiyahPhoto.png" height="50%">
     <h2>برامجنا</h2>
   </div>
