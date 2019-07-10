@@ -62,6 +62,93 @@ class AppServiceProvider extends ServiceProvider
             return $info;
           ######## END PERSONAL INFORMATIONS ########-->
         });
+        Blade::directive('selectForm',function ()
+        {
+          $Reception_Of_Delegations_Form="
+          <div class='formModel'>
+            <center>
+              <h3>   تعبئة نموذج  </h3>
+              <form method='post' action=''>
+                <fieldset>
+  	               <legend>نموذج استقبال الوفود</legend>
+                   <label>الجنسية</lable></br>
+                   <select id='country' name='country' class='form-control'>
+                    <option value='سعودية'>سعودية</option>
+                    <option value='هندية'>هندية</option>
+                    <option value='افغانستانيه'>افغانستانيه</option>
+                    <option value='امريكية'>امريكية</option>
+                    <option value='اندنوسيه'>اندنوسيه</option>
+                    <option value='باكستانيه'>باكستانيه</option>
+                    <option value='تركية'>تركية</option>
+                    <option value='امارتية'>امارتية</option>
+                    <option value='بحرينيه'>بحرينيه</option>
+                    <option value='قطريه'>قطريه</option>
+                    <option value='كويتيه'>كويتيه</option>
+                    <option value='يمنية'>يمنية</option>
+                    <option value='عمانية'>عمانية</option>
+                    <option value='ارنية'>اردنية</option>
+                    <option value='سوريه'>سوريه</option>
+                    <option value='لبنانية'>لبنانية</option>
+                    <option value='عراقية'>عراقية</option>
+                    <option value='ايرانية'>ايرانية</option>
+                    <option value='ماليزيه'>ماليزيه</option>
+                    <option value='Barbados'>Barbados</option>
+                    <option value='Belarus'>Belarus</option>
+                    <option value='Belgium'>Belgium</option>
+                    <option value='Belize'>Belize</option>
+                    <option value='Benin'>Benin</option>
+                    <option value='Bermuda'>Bermuda</option>
+                    <option value='Bhutan'>Bhutan</option>
+                    <option value='Bolivia'>Bolivia</option>
+                    <option value='Bosnia and Herzegovina'>Bosnia and Herzegovina</option>
+                    <option value='Botswana'>Botswana</option>
+                    <option value='Bouvet Island'>Bouvet Island</option>
+                    <option value='Brazil'>Brazil</option>
+                    <option value='British Indian Ocean Territory'>British Indian Ocean Territory</option>
+                    <option value='Brunei Darussalam'>Brunei Darussalam</option>
+                    <option value='Bulgaria'>Bulgaria</option>
+                    <option value='Burkina Faso'>Burkina Faso</option>
+                    <option value='Burundi'>Burundi</option>
+                    <option value='Cambodia'>Cambodia</option>
+                    <option value='Cameroon'>Cameroon</option>
+                    <option value='Canada'>Canada</option>
+                    <option value='Cape Verde'>Cape Verde</option>
+                  </select></br>
+                   <label>تاريخ الوصول</lable></br>
+                   <input type='date'></br>
+                   <label>وقت الوصول</lable></br>
+                   <input type='time'></br>
+                   <label>عنوان السكن في مكة </lable></br>
+                   <input type='text'></br>
+                   <label>عنوان السكن في المدينة </lable></br>
+                   <input type='text'></br>
+                   <label>تاريخ الزيارة </lable></br>
+                   <input type='date'></br>
+                   <label>وقت الزيارة</lable></br>
+                   <input type='time'></br>
+                   <label>تاريخ المغادرة </lable></br>
+                   <input type='date'></br>
+                   <label>وقت الزيارة </lable></br>
+                   <input type='time'></br>
+                   <label>منسق الوفد</lable></br>
+                   <input type='text'></br>
+                   <label>رقم التواصل</lable></br>
+                   <input type='phone'></br>
+                   <label>عدد الرجال</lable></br>
+                   <input type='number'></br>
+                   <label>عدد النساء</lable></br>
+                   <input type='number'></br>
+                   <label>عدد الاطفال</lable></br>
+                   <input type='number'></br>
+                   <input type='submit' value='send' name='submitForm'/>
+                 </fieldset>
+              </form>
+            </center>
+          </div>";
+
+          return $Reception_Of_Delegations_Form;
+          // code...
+        });
     }
 }
 ?>

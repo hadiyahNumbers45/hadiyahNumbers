@@ -46,8 +46,8 @@
         <a href="#" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">تعديل كلمة المرور</a>
         <a href="#">تسجيل الخروج</a>
       </div>
-      <span style="font-size:40px;cursor:pointer; margin-top:10px;" onclick="openNav()" class="fa fa-fw fa-user"></span>
-      <span style="cursor:pointer;font-size:40px; margin-top:10px;" class="fa fa-fw fa-user" onclick="document.getElementById('id01').style.display='block'"></span>
+      <span style="font-size:40px;cursor:pointer; margin-top:10px;" onclick="openNav()" ><embed type="image/svg+xml" src="images/edit-3.svg" /></span>
+      <span style="cursor:pointer;font-size:40px; margin-top:10px;" onclick="document.getElementById('id01').style.display='block'"><embed type="image/svg+xml" src="images/log-in.svg" /></span>
 </div>
 <!--LOGIN-->
 <div id="id01" class="modal">
@@ -96,8 +96,13 @@
 </header>
 
 <div class="pagesContent">
+  @displayPersonalInfo
+  <br/><br/>
+  <center><h2>@yield('pageTitle')</h2></center>
+    <div class="contentPanel">
   <!--PROFILE-->
-@yield('content')
+      @yield('content')
+    </div>
 </div>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
@@ -157,30 +162,3 @@
 </footer>
 </body>
 </html>
-<!-->
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-// Get the modal
-var modal1 = document.getElementById('id02');
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal1) {
-        modal.style.display = "none";
-    }
-}
-</script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

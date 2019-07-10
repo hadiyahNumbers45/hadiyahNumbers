@@ -46,6 +46,7 @@ padding: 5px 3px;
 text-decoration: none;
 }
 footer{
+     position: static;
      background-color: white;
      padding:30px 0px;
 }
@@ -83,7 +84,7 @@ footer ul li{
 }
 /* personal informatin  */
 .boxInfo {
-  margin-top: 80PX;
+
   padding: 6px;
   background-color: rgb(240, 240, 240);
   text-align: right;
@@ -4047,16 +4048,36 @@ blockquote p {
   cursor: pointer;
   background-color: #55816B; color:white;}
   .formModel input[type=submit]:hover{opacity: 0.8;}
+  /*
 .pagesContent{background-image: url('images/backgroundimage.jpg'); background-repeat: repeat;}
 header a:hover{background-color: white;}
 .imageOfHadiyah h2 {color:black; position: absolute; top:25%;right:44%;font-size: 700%}
-.imageOfHadiyah img{width:100%; height:50%; margin-top: -1.5%; opacity: 0.5}
-.programsPanel table{margin-left: 5%; margin-right: 5%;}
+.imageOfHadiyah img{width:100%; height:100%; margin-top: -1.8%; opacity: 0.5;}
+.programsPanel table{margin-left:1%;}
 .programsPanel td{padding:2%}
 .programsPanel p{font-size: 150%;}
 .programsPanel img{width:120px;}
-.programsPanel{position: absolute;top:50%;}
-.programInfo{ background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.programsPanel{position: absolute;top:40%}
+.programInfo{
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-  .programInfo:hover{border-style: solid; border-width: 3px 0 3px 0 ; border-color:#009973; }
+.programInfo:hover{border-style: solid; border-width: 3px 0 3px 0 ; border-color:#009973; }
 .readMore{width:10%; border-radius:100%; background-color: #009973;}
+.pagesContentnew{width:98%; background-color: white;
+  position: absolute; top:40%;
+}
+*/
+.pagesContent{background-image: url("/images/hadiyahPhoto1.png"); background-repeat: no-repeat;
+ background-size:100% 45% ;height:100%; margin-top: 76PX;}
+.pagesContent h2 {color:white;font-size: 700%;}
+.contentPanel{margin: 5% 0 3% 1% ;background-color: white;width: 98%;
+    box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2), 2px 6px 20px 2px rgba(0, 0, 0, 0.19);}
+.programsPanel td{padding:2%}
+.programsPanel p{font-size: 150%;}
+.programInfo img{width:120px;}
+.programInfo:hover{border-style: solid; border-width: 3px 0 3px 0 ; border-color:#009973; }
+.readMore{width:10%; border-radius:100%; background-color: #009973;}
+.pagesContentnew{width:98%; background-color: white;
+  position: absolute; top:40%;
+}

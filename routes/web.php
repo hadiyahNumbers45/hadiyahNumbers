@@ -15,8 +15,11 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-Route::get('/hh', function () {
+Route::get('/hhh', function () {
   return view('hadiyah');
+});
+Route::get('/hh', function () {
+  return view('testTemplate');
 });
 
 Route::get('/GUIProgram', function () {
