@@ -45,9 +45,11 @@ Route::get('/GUIObserverInfo', function () {
 Route::get('/GUIAdmin', function () {
     return view('GUIAdmin');
 });
+/*
 Route::get('/GUIadminProgramInfo', function () {
     return view('GUIadminProgramInfo');
 });
+*/
 Route::get('/GUIit', function () {
     return view('GUIit');
 
@@ -64,3 +66,12 @@ Route::post('/insert', 'Cnteoller@insert');
 /*delegation 8/7/2019*/
 
 Route::post('/test','itController@signup');
+
+
+
+//Route::get('views/GUIObserverInfo','GUIObserverInfoController@index');
+Route::get('/observers','GUIObserverInfoController@index');
+
+Route::get('/observers/create','GUIObserverInfoController@create');
+
+Route::post('/Observersaction','GUIObserverInfoController@editObserver');

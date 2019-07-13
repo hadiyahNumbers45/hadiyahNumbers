@@ -1,6 +1,6 @@
 @extends('templates.hadiyah')
 @section('title')
-رئيس البرامج
+تعبئة نموذج
 @endsection
 @section('content')
 <div>

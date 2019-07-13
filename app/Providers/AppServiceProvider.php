@@ -62,8 +62,13 @@ class AppServiceProvider extends ServiceProvider
             return $info;
           ######## END PERSONAL INFORMATIONS ########-->
         });
+
         Blade::directive('selectForm',function ()
         {
+          $usedMaterialBodyFood=array('coffee'=>'تمر','date'=>'قهوة','water'=>'ماء','iftarMail'=>'وجبة افطار');
+          $languagesSoulFood=array('العربية','الانجليزيه','الهندية','الكردية','الباكستانية');
+          $x=array('كتيبات','منشورات');
+          $id=0;
           $Reception_Of_Delegations_Form="
           <div class='formModel'>
             <center>
@@ -146,7 +151,103 @@ class AppServiceProvider extends ServiceProvider
             </center>
           </div>";
 
-          return $Reception_Of_Delegations_Form;
+          $Body_Food_Form="
+          <div class='formModel'>
+            <center>
+              <form method='post' action=''>
+                <fieldset>
+  	               <legend>تعبئة نموذج</legend>
+                   <label>المدينة</lable></br>
+                   <select id='city' name='city'>
+                    <option value='مكة'>مكة</option>
+                    <option value='المدينة'>المدينة</option>
+                    <option value='جدة'>جدة</option>
+                    <option value='Cameroon'>Cameroon</option>
+                    <option value='Canada'>Canada</option>
+                    <option value='Cape Verde'>Cape Verde</option>
+                  </select>
+                  <br/>
+                  <label>الموقع</label><br/>
+                  <input type='text' name='location'/><br/>
+                   <label>اجمالي المواد المستخدمة</lable></br>
+                   <input type='number' name='usedMaterial'></br>";
+                   //الايدي راح يكون على حسب اي دي الخدمة مبدئيا لاختبار العرض حطيت 1 و 0
+                   if($id==1){
+                     foreach ($x as $key => $value) {
+                        $Body_Food_Form.="<label>".$value."</label><br>
+                        <input type='number' name=".$key."></br>
+                        <select id='language' name='languagesSoulFood'>";
+                       foreach ($languagesSoulFood as $keyL => $valueL) {
+                         $Body_Food_Form.="
+                          <option value=".$valueL.">".$valueL."</option>";
+                       }
+                       $Body_Food_Form.="</select><br/>";
+
+                     }
+                   }
+                   elseif ($id==0) {
+                     foreach ($usedMaterialBodyFood as $key => $value) {
+                       $Body_Food_Form.="<label>".$value."</label><br>
+                       <input type='number' name=".$key."></br>";
+                     }
+                   }
+                   else{
+                     $Body_Food_Form.="
+                     <label>مواد مستخدمة</lable></br>
+                     <textarea name='materials'>
+                     </textarea></br>";
+                   }
+                   $Body_Food_Form.="
+                   <label>فائض اليوم</lable></br>
+                   <textarea name='surplusToday'>
+                   </textarea></br>
+                   <br/>
+                   <label>احتياج الغد </lable></br>
+                   <textarea name='tomorrowNeeds'>
+                   </textarea>
+                   </br>
+                   </br>
+                   <input type='submit' value='send' name='submitForm'/>
+                 </fieldset>
+              </form>
+            </center>
+          </div>";
+//numberOfAgencies=عدد الوكالات
+//statment بيان الجهه
+//numberOfCarcasses عدد الذبائح
+//carcassesType النوع
+//delegateName
+          $booldOfALgebrat="
+          <div class='formModel'>
+            <center>
+              <form method='post' action=''>
+                <fieldset>
+                   <legend>تعبئة نموذج</legend>
+                    <label>اجمالي الوكالات</label><br/>
+                    <input type='number' name='numberOfAgencies'><br/>
+                    <label>الجهات المستفيدة من الوكالات:</label><br/>
+                    <label>بيان الجهة</label><br/>
+                    <input type='text' name='statment'><br/>
+                    <label>عدد الذبائح</label><br/>
+                    <input type='number' name='numberOfCarcasses'><br/>
+                    <label>النوع</label><br/>
+                    <input type='text' name='carcassesType'><br/>
+                    <label>اسم المندوب</label><br/>
+                    <input type='text' name='delegateName'><br/>
+                    <label>اجمالي الذبائح</label><br/>
+                    <input type='number' name='sumCarcasses'><br/>
+                    <label>اعتماد اللجنة الشرعية</label><br/>
+                    <label>اسماء الاعضاء</label><br/>
+                    <input type='text' name='membersName'><br/>
+                    <label>ملاجظات ان وجدت</label><br/>
+                    <input type='text' name='notes'><br/>
+                    <input type='submit' value='send' name='submitForm'/>
+                  </fieldset>
+               </form>
+             </center>
+           </div>";
+          $allForms=$booldOfALgebrat.$Body_Food_Form.$Reception_Of_Delegations_Form;
+          return $allForms;
           // code...
         });
     }
