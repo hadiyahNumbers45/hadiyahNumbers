@@ -24,53 +24,59 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<div class="form-popup" id="myForm">
-    <form method="POST" action="GUIObserverInfoController" class="form-container" autocomplete="off" >
-    <h1>إضافة مشرف جديد </h1>
+  <div class="form-popup" id="myForm">
+    @if(count($errors)>0)
+    <div >
+         <ul>
+            @foreach ($errors->all() as $errors )
+             <li>{{$error}}</li>
+            @endforeach
+        </ul>
 
-
-
-    <label for="idd"><b>الرقم التعريفي</b></label>
-    <input type="text"  name="idd" required>
-
-    <label for="name"><b>الاسم الاول </b></label>
-    <input type="text"  name="name" required>
-    <label for="name"><b>الاسم الثاني </b></label>
-    <input type="text" name="name" required>
-    <label for="name"><b>الاسم الثالث </b></label>
-    <input type="text"  name="name" required>
-
-    <label for="serv"><b>الخدمة </b></label>
-    <input type="text" name="serv" required>
-
-    <div class="filter-group">
-      <label>الموقع</label>
-      <select class="form-control">
-        <option>All</option>
-        <option>Berlin</option>
-        <option>London</option>
-        <option>Madrid</option>
-        <option>New York</option>
-        <option>Paris</option>
-      </select>
     </div>
+    @endif
+    @if (\Session::has('success'))
+  <div class="alert alert-success">
+  <p>{{\Session::get('success')}} </p>
 
-    <button type="submit" cclass="page-item"  ><span> اضافة  </span></button>
-    <button type="button" class="page-item" onclick="closeForm()">إغلاق </button>
-  </form>
+  </div>
+    @endif
+
+    <form method="POST" action="#" class="form-container" autocomplete="off" >
+     {{csrf_field()}}
+
+
+   <h1>إضافة مشرف جديد </h1>
+
+   <br>
+   <label for="service_id"><b>الخدمة </b></label>
+   <br>
+   <!--
+   <label> <input type="radio" name="program_id" value="1" ID="program_id">one </label>
+   <br>
+   <label> <input type="radio" name="program_id" value="2"ID="program_id" >two </label>
+   <br>
+   <label> <input type="radio" name="program_id" value="3" ID="program_id">Three </label>
+   <br> -->
+     <input type="text" name="service_id" ID="service_id" value = '<?php echo $observers[0]->service_id; ?>' required >
+       <label for="location"><b>الموقع </b></label>
+       <input type="text" name="location" ID="location" value = '<?php echo $observers[0]->location; ?>' required >
+
+
+   <button type="submit" class="page-item" value = "Update observer" ><span> تعديل  </span></button>
+   <button type="button" class="page-item" onclick="closeForm()">إغلاق </button>
+ </form>
 </div>
-
+</div>
 <script>
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+ document.getElementById("myForm").style.display = "block";
 }
 
 function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+ document.getElementById("myForm").style.display = "none";
 }
 </script>
-
-
 
     <div class="container">
         <div class="table-wrapper">
@@ -100,12 +106,19 @@ function closeForm() {
               <span>entries</span>
             </div>
           </div>
-                    <div class="col-sm-9">
-            <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+
+            <div class="col-sm-9">
+            <form action="/search" method="POST" role="search">
+              {{ csrf_field() }}
+            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
             <div class="filter-group">
               <label>الرقم التعريفي </label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="id">
             </div>
+
+          </form>
+
+
             <div class="filter-group">
               <label>الموقع</label>
               <select class="form-control">
@@ -140,27 +153,54 @@ function closeForm() {
                          <th>الخدمة </th>
                          <th>اسم المشرف الميداني </th>
                          <th> الرقم التعريفي  </th>
-                         <th>#</th>
+
                     </tr>
                 </thead>
 
-                $id = DB::table('users')->insertGetId(
-                    [id => '$id', fName => '$fName',  sName => '$sName' , lName  => '$lName' , email  => '$email' , location => '$location' ]
-                );
+@if(isset($observers))
+                <tbody ID="datatable">
 
-                <tbody>
+   @foreach ($observers as $observer)
+                                     <tr>
+                                         <td> <a href='edit/{{ $observer->id }}' class="edit" title="Edit"  data-toggle="tooltip" onclick="openForm()" ><i class="material-icons" >&#xE254;</i></a></td>
+                                         <td>      <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></td>
+                                         <td><span class="status text-success">&bull;</span>{{$observer->location}}</td>
 
+                                         <td>{{$observer->service_id}}</td>
+
+                                         <td>{{$observer->f_name}}</td>
+
+                                         <td>{{$observer->id}}</td>
+
+                                          <td></td>
+                                    </tr>
+
+  @endforeach
+
+      </tbody>
+
+                @elseif(isset($details))
+
+
+                   @foreach ($details as $observer)
                    <tr>
-                       <td> <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a></td>
+                       <td> <a href="#" class="edit" title="Edit"  data-toggle="tooltip" onclick="openForm()" ><i class="material-icons" >&#xE254;</i></a></td>
                        <td>      <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></td>
-                       <td><span class="status text-success">&bull;</span> Delivered</td>
-                       <td>Jun 15, 2017</td>
-                       <td>London</td>
-                       <td><a href="#"> Michael Holz</a></td>
-                        <td>1</td>
+                       <td><span class="status text-success">&bull;</span>{{$observer->location}}</td>
+
+                       <td>{{$observer->service_id}}</td>
+
+                       <td>{{$observer->f_name}}</td>
+
+                       <td>{{$observer->id}}</td>
+
+                        <td></td>
                   </tr>
 
-                </tbody>
+                  @endforeach
+
+                @endif
+
             </table>
 
       <div class="clearfix">
@@ -181,4 +221,47 @@ function closeForm() {
     </div>
 </body>
 </html>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+var table =$('#datatable').DataTable();
+
+table.on('onclick','.Edit',function() {
+
+  $tr = $(this).closest('tr');
+  if($($tr).hasClass('child')){
+    $tr=$tr.prev('.parent');
+  }
+
+ var data = table.row($tr).data();
+ console.log(data);
+
+ $('service_id').val(data[1]);
+ $('location').val(data[2]);
+
+
+ $('#EditForm').attr('action','/Observersaction/'+data[0]);
+
+$('#EditModel').mode('show');
+});
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
 @endsection

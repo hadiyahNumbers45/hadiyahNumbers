@@ -4042,7 +4042,7 @@ blockquote p {
 /*MMMMMMMNNNNNNNNNNAAAAAAAAALLLLLLLLLLLLLLL slide show ********************************/
 /*************************************************************************************/
 /************************************************************************************/
-.formModel input{width: 400px; margin-bottom: 40px;}
+.formModel input, textarea, select{width: 400px;padding:8px;margin-bottom: 40px;}
 .formModel input[type=submit]{padding: 10px;
   border: none;
   cursor: pointer;
