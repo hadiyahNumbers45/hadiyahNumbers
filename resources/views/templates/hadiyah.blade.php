@@ -44,11 +44,7 @@
 <!--header top-->
 <div class="menu">
     <div class="container-fluid">
-    <div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a class="aHome" herf="GUIit" alt="الرئيسية"><img src="images/شعار-هدية-دقة-عالية-1.png" width="120" /></a></li>
-      </ul>
-    </div>
+      <a class="aHome" herf="GUIit" alt="الرئيسية"><img src="images/شعار-هدية-دقة-عالية-1.png" width="120" /></a>
     <span style="font-size:40px;cursor:pointer; margin-top:10px;" onclick="openNav()" ><embed type="image/svg+xml" src="images/edit-3.svg" /></span>
     <span style="cursor:pointer;font-size:40px; margin-top:10px;" onclick="document.getElementById('id01').style.display='block'"><embed type="image/svg+xml" src="images/log-in.svg" /></span>
   </div>
@@ -145,13 +141,13 @@
                 <ul class="contact">
                      <span> شاركنا العطاء </span>
                       <li>
-                         <a href="#">+966 500 399 888</a>
+                         <a href="tel:+966 500 399 888">+966 500 399 888</a>
                       </li>
                       <li>
-                        <a href="#">+966 508 508 111</a>
+                        <a href="tel:+966 508 508 111">+966 508 508 111</a>
                       </li>
                       <li>
-                         <a href="#">+966 530 187 777</a>
+                         <a href="tel:+966 530 187 777">+966 530 187 777</a>
                       </li>
                 </ul>
             </div>
