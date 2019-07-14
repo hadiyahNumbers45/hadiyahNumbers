@@ -26,10 +26,16 @@ class CreateDelegationsTable extends Migration
             $table->string('number_of_women');
             $table->string('number_of_children');
             $table->string('number_of_men');
-            $table->string('departure_time');
-            $table->string('date_of_departure');
-            $table->string('coordinator');
+            $table->string('date');
+            $table->string('day');
+            $table->integer('observe_id')->unsigned();
+            $table->integer('service_id')->unsigned();
+            $table->string('observation');
         });
+        Schema::table('delegations', function($table) {
+            $table->foreign('observe_id')->references('id')->on('observers');
+             $table->foreign('service_id')->references('id')->on('services');
+          });
     }
 
     /**

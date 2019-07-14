@@ -14,14 +14,16 @@ class CreateHospitableFormMaterialsTable extends Migration
     public function up()
     {
         Schema::create('hospitable__form__materials', function (Blueprint $table) {
+          $table->engine = 'InnoDB';
+
             $table->integer('count');
             $table->integer('form_id')->unsigned();
             $table->integer('material_id')->unsigned();
         });
         Schema::table('hospitable__form__materials', function($table) {
             $table->foreign('form_id')->references('form_id')->on('hospitable__forms');
-             $table->foreign('material_id')->references('id')->on('materials');
-  
+            $table->foreign('material_id')->references('id')->on('materials');
+
           });
     }
 

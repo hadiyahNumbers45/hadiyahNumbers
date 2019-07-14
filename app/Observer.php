@@ -8,19 +8,16 @@ class Observer extends Model
 {
     //
     public $incrementing=false;
-    protected $fillable=['id','f_name','s_name','l_name','email','location','service_id'];
+    protected $fillable=['id','f_name','s_name','l_name','email','service_id','location_id'];
     protected $hidden = ['password'];
-  public  $timestam=false;
+    public $timestamps=false;
 
-    public function program(){
-      return $this ->belongsTo('App\Program');
-    }
-    public function superviser(){
-      return $this ->hasOne('App\Superviser');
+   public function superviser(){
+      return $this ->belongsTo('App\Superviser');
     }
 
     public function service(){
-      return $this ->hasMany('App\Service');
+      return $this ->belongsTo('App\Service','services','id');
     }
     public function atonement_and_zakaat_form(){
       return $this ->belongsToMany('App\Atonement_And_Zakaat_Form');
@@ -35,8 +32,8 @@ class Observer extends Model
     public function hospitable_form (){
       return $this ->belongsToMany('App\Hospitable_Form ');
     }
-    public function reception_Of_delegations_form (){
-      return $this ->belongsToMany('App\Reception_Of_Delegations_Form ');
+    public function delegations(){
+      return $this ->belongsToMany('App\Delegation ');
     }
     public function soul_food_form(){
       return $this ->belongsToMany('App\Soul_Food_Form');

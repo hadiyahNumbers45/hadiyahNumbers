@@ -8,6 +8,6 @@ class Admin extends Model
 {
     //
   //  public $incrementing=false;
-    protected $fillable={'id','fName','sName','lName','email'};
+    protected $fillable=['id','fName','sName','lName','email'];
     protected $hidden = ['password'];
 }

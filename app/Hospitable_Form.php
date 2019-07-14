@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Hospitable_Form extends Model
 {
     //
-    protected $fillable=['form_id','city','date','day','location','evaluation','nu_service_providers','number_of_deneficiaries','observe_id','service_id','observation'];
+    protected $fillable=['date','day','evaluation','nu_service_providers','number_of_deneficiaries','observe_id','service_id','location_id','observation'];
     protected  $primarykey='form_id';
-    $timestam=false;
+    public $timestamps=false;
 
-    public function observe(){
+    public function observe_hospitable_form(){
       return $this ->hasOne('App\Observer');
     }
 

@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Blood_Of_Algebrat_Form extends Model
 {
     //
-    protected $fillable=['form_id','count','date','day','observe_id','service_id'];
+    protected $fillable=['count','date','day','observe_id','service_id','count_of_agencies'];
     protected  $primarykey='form_id';
 
-$timestam=false;
-    public function observe(){
+    public $timestamps=false;
+    public function observe_Blood(){
       return $this ->hasOne('App\Observer');
     }
 

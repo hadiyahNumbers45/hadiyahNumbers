@@ -15,7 +15,8 @@ class CreateCareFormMaterialsTable extends Migration
     {
         Schema::create('care__form__materials', function (Blueprint $table) {
 
-          
+          $table->engine = 'InnoDB';
+
           $table->integer('count');
           $table->integer('form_id')->unsigned();
           $table->integer('material_id')->unsigned();

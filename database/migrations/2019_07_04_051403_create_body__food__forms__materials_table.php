@@ -14,19 +14,19 @@ class CreateBodyFoodFormsMaterialsTable extends Migration
     public function up()
     {
         Schema::create('body__food__forms__materials', function (Blueprint $table) {
+          $table->engine = 'InnoDB';
 
 
           $table->integer('count');
           $table->integer('surplus');
           $table->integer('needs_of_tomorro');
-
-              $table->integer('form_id')->unsigned();
+            $table->integer('form_id')->unsigned();
             $table->integer('material_id')->unsigned();
         });
         Schema::table('body__food__forms__materials', function($table) {
             $table->foreign('form_id')->references('form_id')->on('body__food__forms');
              $table->foreign('material_id')->references('id')->on('materials');
-  
+
           });
     }
 

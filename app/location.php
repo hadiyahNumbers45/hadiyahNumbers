@@ -4,14 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Material extends Model
+class location extends Model
 {
     //
-      protected $fillable=['name'];
+    protected $fillable=['id','location','connection_point'];
       public $timestamps=false;
         public $incrementing=false;
 
-
+        public function observers(){
+          return $this ->belongsToMany('App\observers');
+        }
       public function body_food_form(){
         return $this ->belongsToMany('App\Body_Food_Form');
       }

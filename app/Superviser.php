@@ -10,7 +10,7 @@ class Superviser extends Model
     public $incrementing=false;
     protected $fillable=['id','f_name','s_name','l_name','email'];
     protected $hidden = ['password'];
-    $timestam=false;
+    public $timestamps=false;
 
     public function program(){
       return $this ->hasOne('App\Program');
