@@ -10,11 +10,7 @@ class Observer extends Model
     public $incrementing=false;
     protected $fillable=['id','f_name','s_name','l_name','email','location','service_id'];
     protected $hidden = ['password'];
-<<<<<<< HEAD
-    public $timestam=false;
-=======
   public  $timestam=false;
->>>>>>> d4877ae1da5c89c73b427583a0cbe8d4d0007de0
 
     public function program(){
       return $this ->belongsTo('App\Program');
@@ -46,10 +42,6 @@ class Observer extends Model
       return $this ->belongsToMany('App\Soul_Food_Form');
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d4877ae1da5c89c73b427583a0cbe8d4d0007de0
     public function blood_of_algebrat_form(){
       return $this ->belongsToMany('App\Blood_Of_Algebrat_Form');
     }

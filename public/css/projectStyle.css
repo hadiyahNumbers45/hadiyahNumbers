@@ -147,7 +147,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-  background-color: #4CAF50;
+  background-color: #55816B;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -561,7 +561,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   color: #00337F;
   font-size: 20px;
   text-align: center;
-  background-color: #BDCFFF;
+  background-color: #55816B;
   padding: 15px;
 }
 .btn:hover {
@@ -4047,6 +4047,9 @@ blockquote p {
   cursor: pointer;
   background-color: #55816B; color:white;}
   .formModel input[type=submit]:hover{opacity: 0.8;}
+  .todayTomorrow input{width:105px}
+  .todayTomorrow>div{float: right; margin: 2% 3% 2% 3%;}
+  .todayTomorrow button{width: 50px; margin:2% 3% 2% 3%; }
   /*
 .pagesContent{background-image: url('images/backgroundimage.jpg'); background-repeat: repeat;}
 header a:hover{background-color: white;}
