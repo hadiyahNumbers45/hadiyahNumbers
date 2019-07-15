@@ -9,9 +9,13 @@
     <form method='get' action=''>
       <fieldset>
 
+<<<<<<< HEAD
       <legend>غذاء البدن</legend>
 
 <?php displayFormContent($program,$ser,$materials); ?>
+=======
+<?php echo displayFormContent($program,$ser,$materials); ?>
+>>>>>>> e4241a8da6502b298604c875c4650c214155b867
         <br/><br/>
         <input type="submit" name=sendInfo value="ارسال"/>
       </fieldset>
@@ -39,7 +43,7 @@ function displayFormContent($program,$ser,$materials){
                    <label>البيان</lable></br>
                    <select id='info' name='materials_info' required>";
   foreach($materials as $material){
-      $Body_Food_Form.="<option value='Cape Verde'>".$material."</option>";
+                        $Body_Food_Form.=" <option value='Cape Verde'>".$material."</option>";
   }
   $Body_Food_Form.="</select>
                     <div class='todayTomorrow'>
@@ -194,6 +198,10 @@ function displayFormContent($program,$ser,$materials){
                            <input type='text' name='membersName' required><br/>
                            <label>ملاجظات ان وجدت</label><br/>
                            <input type='text' name='notes' required><br/>";
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4241a8da6502b298604c875c4650c214155b867
   if($ser->table_no==1)
     return $Body_Food_Form;
   else if ($ser->table_no==2)
