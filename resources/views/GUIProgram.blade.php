@@ -37,8 +37,5 @@
       <span class="carousel-control-next-icon"></span>
     </a>
   </div>
-  <div>
-    <div>
-      <img>
-  </div>
+
 @endsection

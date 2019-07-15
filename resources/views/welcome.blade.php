@@ -6,6 +6,7 @@
  هدية الحاج والمتعتمر
 @endsection
 @section('content')
+<!--
   <table style="width:100%">
     <tr class="programInfo">
       <td><a href="" alt="اقرا المزيد"><embed type="image/svg+xml" src="images/arrow-left.svg" /><a/></td>
@@ -33,5 +34,37 @@
       <td><img src="images/1الوكالات.png"></td>
     </tr>
   </table>
-
+-->
+<div class="containerHome">
+  <div class="programCads">
+    <center>
+      <p><br/><br/><b>غذاء الروح</b>يرتكز نشاط البرنامج على تعليم اركان الاسلام وتحسين تلاوة الفاتحة وقصار السور.</p>
+      <img src="images/غذاء-الروح1.png" width="150">
+    </center>
+  </div>
+  <div class="programCads">
+    <center>
+      <p><br/><br/><b>غذاء الروح</b>يرتكز نشاط البرنامج على تعليم اركان الاسلام وتحسين تلاوة الفاتحة وقصار السور.</p>
+      <img src="images/غذاء-الروح1.png" width="150">
+    </center>
+  </div>
+  <div class="programCads">
+    <center>
+      <p><br/><br/><b>غذاء الروح</b>يرتكز نشاط البرنامج على تعليم اركان الاسلام وتحسين تلاوة الفاتحة وقصار السور.</p>
+      <img src="images/غذاء-الروح1.png" width="150">
+    </center>
+  </div>
+  <div class="programCads">
+    <center>
+      <p><br/><br/><b>غذاء الروح</b>يرتكز نشاط البرنامج على تعليم اركان الاسلام وتحسين تلاوة الفاتحة وقصار السور.</p>
+      <img src="images/غذاء-الروح1.png" width="150">
+    </center>
+  </div>
+  <div class="programCads">
+    <center>
+      <p><br/><br/><b>غذاء الروح</b>يرتكز نشاط البرنامج على تعليم اركان الاسلام وتحسين تلاوة الفاتحة وقصار السور.</p>
+      <img src="images/غذاء-الروح1.png" width="150">
+    </center>
+  </div>
+</div>
 @endsection
