@@ -45,11 +45,11 @@ Route::get('/GUIObserverInfo', function () {
 Route::get('/GUIAdmin', function () {
     return view('GUIAdmin');
 });
-/*
+
 Route::get('/GUIadminProgramInfo', function () {
     return view('GUIadminProgramInfo');
 });
-*/
+
 Route::get('/GUIit', function () {
     return view('GUIit');
 
