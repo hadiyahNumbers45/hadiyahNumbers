@@ -9,47 +9,7 @@
     <form method='get' action=''>
       <fieldset>
 
-      <legend>غذاء البدن</legend>
-<<<<<<< HEAD
-<label>المدينة</label><br/>
-                 <select id='city' name='city' required>
-                  <option value='Cameroon'>Cameroon</option>
-                  <option value='Canada'>Canada</option>
-                  <option value='Cape Verde'>Cape Verde</option>
-                </select><br>
-                <label>نقطة اتصال<label><br/>
-                <select id='con' name='con' required>
-                 <option value='Cameroon'>Cameroon</option>
-                 <option value='Canada'>Canada</option>
-                 <option value='Cape Verde'>Cape Verde</option>
-               </select>
-                <br/>
-                   <label>البيان</label><br/>
-                   <select id='info' name='materials_info' required>";
-                      @foreach($materials as $material){
-                      <option value='Cape Verde'>{{$material}}</option>
-                    </select>
-                  <div class='todayTomorrow'>
-                    <div>
-                      <label>العدد</label><br/>
-                      <input type='number' name='usedMaterialNumber' placeholder='90' required><br/>
-                    </div>
-                    <div>
-                      <label>فائض اليوم</label><br/>
-                      <input type='number' name='usedMaterialNumberToday' placeholder='10' required><br/>
-                    </div>
-                    <div>
-                      <label>احتياج الغد</label><br/>
-                      <input type='number' name='usedMaterialNumberTomorrow' placeholder='80' required><br/>
-                    </div>
-                    <button>+</button>
-                  </div>
-
-
-=======
-
-<?php displayFormContent($program,$ser,$materials); ?>
->>>>>>> 5e4a17e1e498a745d8b296faa5189027ab1b472a
+<?php echo displayFormContent($program,$ser,$materials); ?>
         <br/><br/>
         <input type="submit" name=sendInfo value="ارسال"/>
       </fieldset>
@@ -76,19 +36,11 @@ function displayFormContent($program,$ser,$materials){
                     <br/>
                    <label>البيان</lable></br>
                    <select id='info' name='materials_info' required>";
-<<<<<<< HEAD
-                      foreach($materials as $material){
-                        $Body_Food_Form.=" <option value='Cape Verde'>".$material."</option>
-
-                    </select>
-                  <div class='todayTomorrow'>
-=======
   foreach($materials as $material){
-      $Body_Food_Form.="<option value='Cape Verde'>".$material."</option>";
+                        $Body_Food_Form.=" <option value='Cape Verde'>".$material."</option>";
   }
   $Body_Food_Form.="</select>
                     <div class='todayTomorrow'>
->>>>>>> 5e4a17e1e498a745d8b296faa5189027ab1b472a
                     <div>
                     <label>العدد</lable></br>
                     <input type='number' name='usedMaterialNumber' placeholder='90' required></br>
@@ -240,25 +192,7 @@ function displayFormContent($program,$ser,$materials){
                            <input type='text' name='membersName' required><br/>
                            <label>ملاجظات ان وجدت</label><br/>
                            <input type='text' name='notes' required><br/>";
-<<<<<<< HEAD
-                           if($ser->table_no==1)
-                           return $Body_Food_Form;
-                       else if ($ser->table_no==2)
-                           return ;
-                       else if ($ser->table_no==3)
-                           return $booldOfALgebrat;
-                       else if ($ser->table_no==4)
-                           return $booldOfALgebrat;
-                       else if ($ser->table_no==5)
-                           return ;
-                       else if ($ser->table_no==6)
-                             return $soul;
-                       else if ($ser->table_no==7)
-                         return $Reception_Of_Delegations_Form;
 
-                       else
-                            return 0;
-=======
   if($ser->table_no==1)
     return $Body_Food_Form;
   else if ($ser->table_no==2)
@@ -275,6 +209,5 @@ function displayFormContent($program,$ser,$materials){
      return $Reception_Of_Delegations_Form;
   else
     return 0;
->>>>>>> 5e4a17e1e498a745d8b296faa5189027ab1b472a
 }
 ?>
