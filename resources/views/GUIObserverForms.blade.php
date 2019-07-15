@@ -1,3 +1,4 @@
+    
 @extends('templates.hadiyah')
 @section('title')
 تعبئة نموذج
@@ -5,9 +6,46 @@
 @section('content')
 <div class='formModel'>
   <center>
-    <form method='post' action=''>
+    <form method='get' action=''>
       <fieldset>
-        <?php echo displayFormContent(3); ?>
+        
+      <legend>غذاء البدن</legend>
+<label>المدينة</label><br/>
+                 <select id='city' name='city' required>
+                  <option value='Cameroon'>Cameroon</option>
+                  <option value='Canada'>Canada</option>
+                  <option value='Cape Verde'>Cape Verde</option>
+                </select><br>
+                <label>نقطة اتصال<label><br/>
+                <select id='con' name='con' required>
+                 <option value='Cameroon'>Cameroon</option>
+                 <option value='Canada'>Canada</option>
+                 <option value='Cape Verde'>Cape Verde</option>
+               </select>
+                <br/>
+                   <label>البيان</label><br/>
+                   <select id='info' name='materials_info' required>";
+                      @foreach($materials as $material){
+                      <option value='Cape Verde'>{{$material}}</option>   
+                    </select>
+                  <div class='todayTomorrow'>
+                    <div>
+                      <label>العدد</label><br/>
+                      <input type='number' name='usedMaterialNumber' placeholder='90' required><br/>
+                    </div>
+                    <div>
+                      <label>فائض اليوم</label><br/>
+                      <input type='number' name='usedMaterialNumberToday' placeholder='10' required><br/>
+                    </div>
+                    <div>
+                      <label>احتياج الغد</label><br/>
+                      <input type='number' name='usedMaterialNumberTomorrow' placeholder='80' required><br/>
+                    </div>
+                    <button>+</button>
+                  </div>
+                  
+       
+        <br/><br/>
         <input type="submit" name=sendInfo value="ارسال"/>
       </fieldset>
     </form>
@@ -15,7 +53,7 @@
 </div>
 @endsection
 <?php
-function displayFormContent($id=1){
+function displayFormContent($program,$ser,$materials){
   $Body_Food_Form=" <legend>غذاء البدن</legend>
 <label>المدينة</lable></br>
                  <select id='city' name='city' required>
@@ -31,9 +69,11 @@ function displayFormContent($id=1){
                </select>
                 <br/>
                    <label>البيان</lable></br>
-                   <select id='info' name='info' required>
-                    <option value='Cape Verde'>Cape Verde</option>
-                  </select>
+                   <select id='info' name='materials_info' required>";
+                      foreach($materials as $material){
+                        $Body_Food_Form.=" <option value='Cape Verde'>".$material."</option> 
+                        
+                    </select>
                   <div class='todayTomorrow'>
                     <div>
                       <label>العدد</lable></br>
@@ -153,9 +193,8 @@ function displayFormContent($id=1){
                      <input type='text' name='languagesSoulFood' placeholder='العربية' required></br>
                    </div>
                    <button>+</button>
-                 </div>
+                 </div><br>
                  ";
-
 $booldOfALgebrat="<legend>تعبئة نموذج</legend>
                            <label>اجمالي الوكالات</label><br/>
                            <input type='number' name='numberOfAgencies' required><br/>
@@ -187,65 +226,22 @@ $booldOfALgebrat="<legend>تعبئة نموذج</legend>
                            <input type='text' name='membersName' required><br/>
                            <label>ملاجظات ان وجدت</label><br/>
                            <input type='text' name='notes' required><br/>";
-
-
-
- if($id==1)
-    return $Body_Food_Form;
-else if ($id==2)
-  return $Reception_Of_Delegations_Form;
-else if ($id==3)
-    return $soul;
-else if ($id==4)
-      return $booldOfALgebrat;
-else
-return 0;
-
+                           if($ser->table_no==1)
+                           return $Body_Food_Form;
+                       else if ($ser->table_no==2)
+                           return ;
+                       else if ($ser->table_no==3)
+                           return $booldOfALgebrat;
+                       else if ($ser->table_no==4)
+                           return $booldOfALgebrat;
+                       else if ($ser->table_no==5)
+                           return ;
+                       else if ($ser->table_no==6)
+                             return $soul;
+                       else if ($ser->table_no==7)
+                         return $Reception_Of_Delegations_Form;
+                       
+                       else
+                            return 0;
 }
-  function displayForm($value='1')
-
-  {/*                 <label>المدينة</lable></br>
-                   <select id='city' name='city' required>
-                    <option value='Cameroon'>Cameroon</option>
-                    <option value='Canada'>Canada</option>
-                    <option value='Cape Verde'>Cape Verde</option>
-                  </select>
-*/
-//numberOfAgencies=عدد الوكالات
-//statment بيان الجهه
-//numberOfCarcasses عدد الذبائح
-//carcassesType النوع
-//delegateName
-      $booldOfALgebrat="
-      <div class='formModel'>
-        <center>
-          <form method='post' action=''>
-            <fieldset>
-               <legend>تعبئة نموذج</legend>
-                <label>اجمالي الوكالات</label><br/>
-                <input type='number' name='numberOfAgencies' required><br/>
-                <label>الجهات المستفيدة من الوكالات:</label><br/>
-                <label>بيان الجهة</label><br/>
-                <input type='text' name='statment' required><br/>
-                <label>عدد الذبائح</label><br/>
-                <input type='number' name='numberOfCarcasses' required><br/>
-                <label>النوع</label><br/>
-                <input type='text' name='carcassesType' required><br/>
-                <label>اسم المندوب</label><br/>
-                <input type='text' name='delegateName' required><br/>
-                <label>اجمالي الذبائح</label><br/>
-                <input type='number' name='sumCarcasses' required><br/>
-                <label>اعتماد اللجنة الشرعية</label><br/>
-                <label>اسماء الاعضاء</label><br/>
-                <input type='text' name='membersName' required><br/>
-                <label>ملاجظات ان وجدت</label><br/>
-                <input type='text' name='notes' required><br/>
-                <input type='submit' value='send' name='submitForm'/>
-              </fieldset>
-           </form>
-         </center>
-       </div>";
-      $allForms=$booldOfALgebrat.$Body_Food_Form.$Reception_Of_Delegations_Form;
-      return $allForms;
-  }
 ?>

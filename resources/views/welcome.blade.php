@@ -1,9 +1,9 @@
 @extends('templates.hadiyah')
 @section('title')
-رئيس البرامج
+هدية الحاج والمعتمر
 @endsection
 @section('pageTitle')
-هدية الحاج والمتعمر
+ هدية الحاج والمتعتمر
 @endsection
 @section('content')
   <table style="width:100%">

@@ -3,6 +3,51 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
+
+<script>
+function openForm() {
+ document.getElementById("myForm").style.display = "block";
+}
+function closeForm() {
+ document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+var table =$('#datatable').DataTable();
+
+table.on('onclick','.Edit',function() {
+
+  $tr = $(this).closest('tr');
+  if($($tr).hasClass('child')){
+    $tr=$tr.prev('.parent');
+  }
+
+ var data = table.row($tr).data();
+ console.log(data);
+
+ $('service_id').val(data[1]);
+ $('location').val(data[2]);
+
+
+ $('#EditForm').attr('action','/Observersaction/'+data[0]);
+
+$('#EditModel').mode('show');
+});
+
+});
+
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+
 // Get the modal
 var modal = document.getElementById('id01');
 // When the user clicks anywhere outside of the modal, close it

@@ -2,6 +2,9 @@
 @section('title')
 رئيس البرامج
 @endsection
+@section('pageTitle')
+برنامج
+@endsection
 @section('content')
   <div id="demo" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -9,20 +12,21 @@
       <li data-target="#demo" data-slide-to="0" class="active"></li>
       <li data-target="#demo" data-slide-to="1"></li>
       <li data-target="#demo" data-slide-to="2"></li>
+      <li data-target="#demo" data-slide-to="4"></li>
     </ul>
     <!-- The slideshow -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="images/img_3.jpeg" alt="Los Angeles" width="1100" height="250">
-      </div>
-      <div class="carousel-item active">
-        <img src="images/hadiyah1.png" alt="Los Angeles" width="1100" height="250">
+        <img src="images/hadiyah2.png" alt="هدية في صور" width="1100px" height="250px">
       </div>
       <div class="carousel-item">
-        <img src="images/img_1.jpg" alt="Chicago" width="1100" height="250">
+        <img src="images/hadiyah1.png" alt="هدية في صور" width="1100px" height="250px">
       </div>
       <div class="carousel-item">
-        <img src="images/img_2.jpg" alt="New York" width="1100" height="250">
+        <img src="images/hadiyah4.png" alt="هدية في صور" width="1100px" height="250px">
+      </div>
+      <div class="carousel-item">
+        <img src="images/hadiyah3.png" alt="هدية في صور" width="1100px" height="250px">
       </div>
     </div>
     <!-- Left and right controls -->
@@ -32,5 +36,9 @@
     <a class="carousel-control-next" href="#demo" data-slide="next">
       <span class="carousel-control-next-icon"></span>
     </a>
+  </div>
+  <div>
+    <div>
+      <img>
   </div>
 @endsection
