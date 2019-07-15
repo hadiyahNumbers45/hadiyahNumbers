@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Redirect;
 use App\Observer;
 use App\Service;
-use App\Program; 
+use App\Program;
 use App\Blood_Of_Algebrat_Form;
 use App\Institution;
 use App\Blood_Of_Algebrat_Form_Institution;
@@ -27,13 +27,13 @@ use App\Hospitable_Form;
 use App\Hospitable_Form_Material;
 class GUIObserverFormsController extends Controller
 {
-   /// basma 9/7 عرض النموذج المناسب مع  عنوان الخدمة والبرنامج  
-    public function index(Request $request) {   
-        
+   /// basma 9/7 عرض النموذج المناسب مع  عنوان الخدمة والبرنامج
+    public function index(Request $request) {
+
         $ser=Service::find($request->service_id);
         $program=Program::find($ser->program_id);
         $location=location::all();
-        
+
         if(($ser->table_no==1)||($ser->table_no==4)||($ser->table_no==5)||($ser->table_no==6))
             {   $materials=$ser->material_services;
             return  view('GUIObserverForms',compact('program','ser','materials','location'));
@@ -43,15 +43,15 @@ class GUIObserverFormsController extends Controller
         elseif($ser->table_no==2||$ser->table_no==3)
               {$institution=Institution::all();
                return view('GUIObserverForms',compact('program','ser','institution'));}
-        else 
+        else
         return view('GUIObserver') ;
     }
 
     /// basma 9/7 حفظ معلومات القادمة من صفحة النموذج
-    public function store(Request $request){ 
+    public function store(Request $request){
         $ser=Service::find($request->input('service_id'));
         $program=Service::find($ser->id)->program;
-         // نماذج البدن ومضياف والروح و عناية 
+         // نماذج البدن ومضياف والروح و عناية
         if(($ser->table_no==1)||($ser->table_no==4)||($ser->table_no==5)||($ser->table_no==6)){// خاص بالبدن والروح وعنايةومضياف
             $materials=Material::all();
             if($ser->table_no==1){
@@ -69,21 +69,21 @@ class GUIObserverFormsController extends Controller
             $materials=$ser->material_services;
             return view('GUIObserverForms',compact('program','ser','materials','success'));
         }
-        elseif( $ser->table_no==2){/// و الزكاة خاص بنموذج الكفارات 
+        elseif( $ser->table_no==2){/// و الزكاة خاص بنموذج الكفارات
             GUIObserverFormsController::store_Zakaat_Form($request);
             $institution=Institution::all();
             return view('GUIObserverForms',compact('program','ser','institution','success'));
         }
-        
-        elseif( $ser->table_no==3){ /// خاص بنموذج الوكالات 
+
+        elseif( $ser->table_no==3){ /// خاص بنموذج الوكالات
             $institution=Institution::all();
-            $success=GUIObserverFormsController::store_algebrat($request); 
+            $success=GUIObserverFormsController::store_algebrat($request);
             return view('GUIObserverForms',compact('program','ser','institution','success'));
-          
+
         }
-    
-       
-        elseif($ser->table_no==7){//    
+
+
+        elseif($ser->table_no==7){//
             return "استقبال الوفود";
 
         }else
@@ -92,42 +92,42 @@ class GUIObserverFormsController extends Controller
 
     //  ادخال البدن
     public function store_body_forms(Request $request){
-        $form=Body_Food_Form::create($request->all()+['observe_id'=>1]); 
+        $form=Body_Food_Form::create($request->all()+['observe_id'=>1]);
             foreach($request->materials_info as $material){
                 if(isset($materia['name'])){
-               $body_mater=Body_Food_Forms_Material::create([ 
+               $body_mater=Body_Food_Forms_Material::create([
                 'surplus'=>$material['surplus'],
                'needs_of_tomorro'=>$material['needs_of_tomorro'],
                'count'=>$material['count'],
                'form_id'=>$form['id'],
                'material_id'=> $material['material_id']]);
                 $body_mater->save();   }
-               }return "تم حفظ البيانات بنجاح";   
+               }return "تم حفظ البيانات بنجاح";
     }
-    
+
     //  ادخال عناية
     public function store_care_Form(Request $request){
-        $form=Care_Form::create($request->all()+['observe_id'=>1]); 
+        $form=Care_Form::create($request->all()+['observe_id'=>1]);
             foreach($request->materials_info as $material){
                 if(isset($materia['name'])){
-               $care_form=Care_Form_Material::create([ 
+               $care_form=Care_Form_Material::create([
                'count'=>$material['count'],
                'form_id'=>$form['id'],
                'material_id'=> $material['material_id']]);
                 $care_form->save();   }
-               }return "تم حفظ البيانات بنجاح";   
+               }return "تم حفظ البيانات بنجاح";
     }
     // ادخال مضياف
     public function store_hospitable_form(Request $request){
-        $form=Hospitable_Form::create($request->all()+['observe_id'=>1]); 
+        $form=Hospitable_Form::create($request->all()+['observe_id'=>1]);
             foreach($request->materials_info as $material){
                 if(isset($materia['name'])){
-               $hospitable_material=Hospitable_Form_Material::create([ 
+               $hospitable_material=Hospitable_Form_Material::create([
                'count'=>$material['count'],
                'form_id'=>$form['id'],
                'material_id'=> $material['material_id']]);
                $hospitable_material->save();}
-               }    
+               }
                return "تم حفظ البيانات بنجاح";
     }
     //ادخال وكالات
@@ -141,9 +141,9 @@ class GUIObserverFormsController extends Controller
             'name_of_delegate'=>$inst['name_of_delegate'],
             'form_id'=>$form['id'],
             'institution_id'=> $inst['id']]);
-             $blood_of_algebrat_form_institution->save();} 
-            
-        }return "تم حفظ البيانات بنجاح";     
+             $blood_of_algebrat_form_institution->save();}
+
+        }return "تم حفظ البيانات بنجاح";
     }
     // حفظ الاعضاء اللجنة
     public function store_adoption_of_the_committees(Request $request,$form){
@@ -156,8 +156,8 @@ class GUIObserverFormsController extends Controller
              ]);}$adoption_of_the_committees->save();
         }return "تم حفظ البيانات بنجاح";
     }
-    
-   //الكفارات 
+
+   //الكفارات
     public function store_Zakaat_Form(Request $request){
         $form=Atonement_And_Zakaat_Form::create($request->all()+['observe_id'=>1]);
         foreach($request->institution as $inst){
@@ -171,6 +171,5 @@ class GUIObserverFormsController extends Controller
         }}return "تم حفظ البيانات بنجاح";
 
      }
-                    
+
     }
-        

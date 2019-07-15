@@ -1,4 +1,4 @@
-    
+
 @extends('templates.hadiyah')
 @section('title')
 تعبئة نموذج
@@ -8,7 +8,7 @@
   <center>
     <form method='get' action=''>
       <fieldset>
-        
+
       <legend>غذاء البدن</legend>
 <label>المدينة</label><br/>
                  <select id='city' name='city' required>
@@ -26,7 +26,7 @@
                    <label>البيان</label><br/>
                    <select id='info' name='materials_info' required>";
                       @foreach($materials as $material){
-                      <option value='Cape Verde'>{{$material}}</option>   
+                      <option value='Cape Verde'>{{$material}}</option>
                     </select>
                   <div class='todayTomorrow'>
                     <div>
@@ -43,8 +43,8 @@
                     </div>
                     <button>+</button>
                   </div>
-                  
-       
+
+
         <br/><br/>
         <input type="submit" name=sendInfo value="ارسال"/>
       </fieldset>
@@ -71,8 +71,8 @@ function displayFormContent($program,$ser,$materials){
                    <label>البيان</lable></br>
                    <select id='info' name='materials_info' required>";
                       foreach($materials as $material){
-                        $Body_Food_Form.=" <option value='Cape Verde'>".$material."</option> 
-                        
+                        $Body_Food_Form.=" <option value='Cape Verde'>".$material."</option>
+
                     </select>
                   <div class='todayTomorrow'>
                     <div>
@@ -240,7 +240,7 @@ $booldOfALgebrat="<legend>تعبئة نموذج</legend>
                              return $soul;
                        else if ($ser->table_no==7)
                          return $Reception_Of_Delegations_Form;
-                       
+
                        else
                             return 0;
 }
