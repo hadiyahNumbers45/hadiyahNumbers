@@ -32,7 +32,7 @@ observer informaiton
   <h1>إضافة مشرف جديد </h1>
 
   <br>
-  <label for="program_id"><b>الخدمة </b></label>
+  <label for="service_id"><b>الخدمة </b></label>
   <br>
   <!--
   <label> <input type="radio" name="program_id" value="1" ID="program_id">one </label>
@@ -135,6 +135,8 @@ observer informaiton
                  <td>{{$observer->service_id}}</td>
 
                  <td>{{$observer->f_name}}</td>
+
+
 
                  <td>{{$observer->id}}</td>
 
