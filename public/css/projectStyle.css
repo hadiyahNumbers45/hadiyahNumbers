@@ -1,9 +1,11 @@
-body{
-  font-family:Roboto;
+body{font-family: hadiyah;
   padding: 5px;
   text-align: right;
-  font: Calibri, Microsoft Sans Serif, Arial, Helvetica, sans-serif;
 overflow: auto;}
+@font-face{
+  font-family: "hadiyah";
+  src: url('fonts/DINNextLTArabic-Regular.ttf');
+}
 header { background-color: #009973;
 border-bottom: 4px solid #4f5467;
 width:100%;
