@@ -21,7 +21,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- Theme Style -->
-  <link rel="stylesheet" href="css/projectStyle.css">
+  <link rel="stylesheet" href="/css/projectStyle.css">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script type = "text/javascript" src = "js/projectStyle.js" ></script>
   <script src="js/jquery-3.2.1.min.js"></script>
@@ -44,9 +44,9 @@
 <!--header top-->
 <div class="menu">
     <div class="container-fluid">
-      <a class="aHome" herf="GUIit" alt="الرئيسية"><img src="images/شعار-هدية-دقة-عالية-1.png" width="120" /></a>
-    <span style="font-size:40px;cursor:pointer; margin-top:10px;" onclick="openNav()" ><embed type="image/svg+xml" src="images/edit-3.svg" /></span>
-    <span style="cursor:pointer;font-size:40px; margin-top:10px;" onclick="document.getElementById('id01').style.display='block'"><embed type="image/svg+xml" src="images/log-in.svg" /></span>
+      <a class="aHome" herf="GUIit" alt="الرئيسية"><img src="/images/شعار-هدية-دقة-عالية-1.png" width="120" /></a>
+    <span style="font-size:40px;cursor:pointer; margin-top:10px;" onclick="document.getElementById('mySidenav').style.display='block'" ><embed type="image/svg+xml" src="/images/edit-3.svg" /></span>
+    <span style="cursor:pointer;font-size:40px; margin-top:10px;" onclick="document.getElementById('id01').style.display='block'"><embed type="image/svg+xml" src="/images/log-in.svg" /></span>
   </div>
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br>
@@ -76,7 +76,7 @@
     </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">إلغاء</button>
-      <span class="psw">نسيت <a href="#">كلمة المرور؟</a></span>
+      <span class="psw">نسيت <a href="" onclick="document.getElementById('id02').style.display='block'">كلمة المرور؟</a></span>
     </div>
   </form>
   @if(isset($msg))
