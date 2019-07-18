@@ -4044,11 +4044,15 @@ blockquote p {
 /*************************************************************************************/
 /************************************************************************************/
 .formModel input, textarea, select{width: 400px;padding:8px;margin-bottom: 40px;}
-.formModel input[type=submit]{padding: 10px;
+.formModel input[type=submit]{
+  padding: 10px;
   border: none;
   cursor: pointer;
-  background-color: #55816B; color:white;}
+  background-color: #55816B;
+  color:white;}
   .formModel input[type=submit]:hover{opacity: 0.8;}
+  .formModel input[type=radio]{width: auto;}
+  .formModel p {font-size: 150%; }
   .todayTomorrow input{width:105px}
   .todayTomorrow>div{float: right; margin: 2% 3% 2% 3%;}
   .todayTomorrow button{width: 50px; margin:2% 3% 2% 3%; }
