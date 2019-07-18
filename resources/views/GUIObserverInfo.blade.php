@@ -24,15 +24,23 @@ observer informaiton
 
 </div>
   @endif
+  <script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
 
-  <form method="POST" action="/edit/<?php echo $observers[0]->id; ?>" class="form-container" autocomplete="off" >
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+  </script>
+  <form method="POST" action="/edit/<?php echo $observers[0]->id; ?>" class="form-container" >
     {{csrf_field()}}
 
 
   <h1>إضافة مشرف جديد </h1>
 
   <br>
-  <label for="program_id"><b>الخدمة </b></label>
+  <label for="service_id"><b>الخدمة </b></label>
   <br>
   <!--
   <label> <input type="radio" name="program_id" value="1" ID="program_id">one </label>
@@ -41,12 +49,27 @@ observer informaiton
   <br>
   <label> <input type="radio" name="program_id" value="3" ID="program_id">Three </label>
   <br> -->
-    <input type="text" name="service_id" ID="service_id" value = '<?php echo $observers[0]->service_id; ?>' required >
+
+  <select id='service_id' name='service_id' required>
+    <option value='1'> افطار صائم </option>
+    <option value='2'>الاضحيه</option>
+    <option value='3'>أحياء السنن </option>
+  </select><br>
+  <br>
+
+
+  <select id='location_id' name='location_id' value='<?php echo $observers[0]->service_id; ?>'required>
+  <option value='1'> افطار صائم </option>
+  <option value='2'>الاضحيه</option>
+  <option value='3'>أحياء السنن </option>
+  </select><br>
+
+  <!--  <input type="text" name="service_id" ID="service_id" value = '<?php echo $observers[0]->service_id; ?>' required >
       <label for="location"><b>الموقع </b></label>
       <input type="text" name="location" ID="location" value = '<?php echo $observers[0]->location_id; ?>' required >
+-->
 
-
-  <input type="submit" class="page-item" value = "Update observers" ><span> تعديل  </span></input>
+  <input type="submit" class="page-item" value = "Update observers" ><span> </span></input>
   <button type="button" class="page-item" onclick="closeForm()">إغلاق </button>
 </form>
 </div>
@@ -99,25 +122,24 @@ observer informaiton
             </tr>
         </thead>
 
+
 @if(isset($observers))
+
               <tbody ID="datatable">
 
  @foreach ($observers as $observer)
-                                   <tr>
-
-                                                                              <td> <a href="edit/{{ $observer->id }}"  data-toggle="tooltip" class="btn btn-primary" class="edit" onclick="openForm()"><i class="material-icons">&#xE254;</i></a></td>
-
-                                                                              <td><span class="status text-success">&bull;</span>{{$observer->location_id}}</td>
-
-                                                                              <td>{{$observer->service_id}}</td>
-
-                                                                              <td>{{$observer->f_name}}</td>
-
-                                                                              <td>{{$observer->id}}</td>
 
 
-                                        <td></td>
-                                  </tr>
+                       <tr>
+
+                            <td> <a href="edit/{{ $observer->id }}"  data-toggle="tooltip" class="btn btn-primary" class="edit" onclick="openForm()"><i class="material-icons">&#xE254;</i></a></td>
+                            <td><span class="status text-success">&bull;</span>{{$locations[$observer->id]->location}}</td>
+<td><span class="status text-success">&bull;</span>{{$locations[$observer->id]->connection_point}}</td>
+                            <td>{{$services[$observer->id]->name}}</td>
+                            <td>{{$observer->f_name}}</td>
+                            <td>{{$observer->id}}</td>
+                            <td></td>
+                      </tr>
 
 @endforeach
 
@@ -130,9 +152,9 @@ observer informaiton
                  <tr>
                    <td> <a href="edit/{{ $observer->id }}"  data-toggle="tooltip" class="btn btn-primary" class="edit" onclick="openForm()"><i class="material-icons">&#xE254;</i></a></td>
                  <td>      <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></td>
-                 <td><span class="status text-success">&bull;</span>{{$observer->location_id}}</td>
-
-                 <td>{{$observer->service_id}}</td>
+                 <td><span class="status text-success">&bull;</span>{{$locations[$observer->id]->location}}</td>
+<td><span class="status text-success">&bull;</span>{{$locations[$observer->id]->connection_point}}</td>
+                 <td>{{$services[$observer->id]->name}}</td>
 
                  <td>{{$observer->f_name}}</td>
 
@@ -146,6 +168,8 @@ observer informaiton
                 @endforeach
 
               @endif
+
+
 
           </table>
 
