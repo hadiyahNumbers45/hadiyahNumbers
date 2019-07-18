@@ -78,10 +78,6 @@ Route::post('/test','itController@signup');
 
 Route::get('/observers/create','GUIObserverInfoController@create');
 
-<<<<<<< HEAD
-=======
-
->>>>>>> a48ab1e6f142822cc60984df6d64c2780588cfb5
 Route::get('edit','GUIObserverInfoController@show');
 
 Route::get('edit/{id}','GUIObserverInfoController@edit');
