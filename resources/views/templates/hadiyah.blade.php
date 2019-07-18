@@ -54,18 +54,21 @@
         <a href="#">تسجيل الخروج</a>
       </div>
 </div>
+
 <!--LOGIN-->
 <div id="id01" class="modal">
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" method='get' action="/signin">
+
+     {{csrf_field()}}
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="images/avatar.png" alt="Avatar" class="avatar">
     </div>
     <div class="container">
-      <label for="uname"><b>البريد الالكتروني</b></label>
-      <input type="text" placeholder="البريد الالكتروني" name="uname" required>
+      <label for="uname"><b> الرقم الوظيفي</b></label>
+      <input type="text" placeholder=" الرقم الوظيفي" name="userid" required>
       <label for="psw"><b>كلمة المرور</b></label>
-      <input type="password" placeholder="كلمة المرور" name="psw" required>
+      <input type="password" placeholder="كلمة المرور" name="password" required>
       <button type="submit">موافق</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> تذكّرني لاحقًا
@@ -76,6 +79,9 @@
       <span class="psw">نسيت <a href="#">كلمة المرور؟</a></span>
     </div>
   </form>
+  @if(isset($msg))
+ {{$msg}}
+ @endif
 </div>
 <!--LOGIN END-->
 <!-- edit window-->

@@ -192,7 +192,6 @@ function displayFormContent($program,$ser,$materials){
                            <input type='text' name='membersName' required><br/>
                            <label>ملاجظات ان وجدت</label><br/>
                            <input type='text' name='notes' required><br/>";
-
   if($ser->table_no==1)
     return $Body_Food_Form;
   else if ($ser->table_no==2)
