@@ -63,12 +63,8 @@ Route::get('/Programs/{programs}','ProgramController@show')->name('program.show'
 * '\insert' is action from gui
 */
 
-//Route::get('views/GUIObserverInfo','GUIObserverInfoController@index');
+Route::get('views/GUIObserverInfo','GUIObserverInfoController@index');
 Route::get('/observers','GUIObserverInfoController@index');
-
-Route::get('/observers/create','GUIObserverInfoController@create');
-
-Route::post('/Observersaction','GUIObserverInfoController@editObserver');
 Route::post('/search','GUIObserverInfoController@searchid' );
 Route::post('/insert', 'Cnteoller@insert');
 /*delegation 8/7/2019*/
@@ -78,10 +74,17 @@ Route::post('/test','itController@signup');
 
 
 //Route::get('views/GUIObserverInfo','GUIObserverInfoController@index');
-Route::get('/observers','GUIObserverInfoController@index');
+
 
 Route::get('/observers/create','GUIObserverInfoController@create');
 
+<<<<<<< HEAD
+Route::get('edit','GUIObserverInfoController@show');
+
+Route::get('edit/{id}','GUIObserverInfoController@edit');
+
+//Route::post('/Observersaction','GUIObserverInfoController@editObserver');
+=======
 Route::post('/Observersaction','GUIObserverInfoController@editObserver');
 
 //Asayel it form to creatacount 13-11-1440
@@ -96,3 +99,4 @@ Route::PATCH('/update/{id}','itController@update');
 Route::PATCH('/delete/{id}','itController@deleteUser');
 
 //end Asayel
+>>>>>>> 0f31fdbddb10ff6a9b7e0e0912b21d4aa7736e69
