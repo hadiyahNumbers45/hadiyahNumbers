@@ -4108,3 +4108,40 @@ clear: right;}
 .pagesContentnew{width:98%; background-color: white;
   position: absolute; top:40%;
 }
+
+.observerMenu ul{
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin: 0% 32%;
+}
+.observerMenu li{
+  float: left;
+  margin: 1% 4%;
+}
+.observerMenu .btn{
+  width: 250px;
+  margin: 4%;
+}
+#prevForms{
+  margin-bottom: 4%;
+  display: none;
+}
+.prevForms thead{
+  background-color:  #55816B;
+}
+.prevForms th{
+  text-align: center;
+  padding: 2%;
+  color: white;
+}
+.prevForms td{
+  text-align: center;
+  padding: 2%;
+}
+.prevForms tr{
+  text-align: center;
+  padding: 2%;
+}
+.prevForms tr:nth-child(even){background-color: #f2f2f2;}

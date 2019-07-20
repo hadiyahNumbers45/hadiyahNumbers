@@ -3,8 +3,79 @@
 رئيس البرامج
 @endsection
 @section('content')
-<div class="serv">
-	  <h2> خدماتي </h2><br>
-	  <div><p class="info"><img src="images/picStar.png" alt="picture" style="width:90px;height:90px;margin-right:15px;"><button class="btn" onclick="">تعبئة النموذج</button>
-	  <button class="btn" onclick="">تعديل النموذج</button>إفطار صائم <br>... وصف مبسط عن الخدمة</p></p></div>
+	  <div class="observerMenu">
+			<ul>
+				<li>
+				<button class="btn" onclick="" type="submit">تعبئة النموذج</button>
+			</li>
+			<li>
+			  <button class="btn" onclick="document.getElementById('prevForms').style.display='block'">استعراض النماذج المعبأه</button>
+			</li>
+			</ul>
+		</div>
+		</br>
+		<center id="prevForms">
+			<table width="50%" class="prevForms">
+				<thead>
+					<th>
+						<th>
+							تعديل
+						</th>
+						<th>
+							تاريخ التعبئة
+						</th>
+						<th>
+							اسم النموذج
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="2">
+							test
+						</td>
+						<td>
+							tedt
+						</td>
+						<td>
+							test
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							test
+						</td>
+						<td>
+							tedt
+						</td>
+						<td>
+							test
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							test
+						</td>
+						<td>
+							tedt
+						</td>
+						<td>
+							test
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							test
+						</td>
+						<td>
+							tedt
+						</td>
+						<td>
+							test
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</center>
+	</br>
 @endsection
