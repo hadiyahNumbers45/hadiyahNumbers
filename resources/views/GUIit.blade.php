@@ -3,7 +3,6 @@
 هدية الحاج والمعتمر - مشرف البرنامج
 @endsection
 @section('content')
-
   <div class="container" style="text-align: right;">
     <div dir="rtl">
       </br>

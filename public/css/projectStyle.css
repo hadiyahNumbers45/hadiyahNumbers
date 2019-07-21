@@ -560,13 +560,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .btn {
   height: 55px;
   width: 19%;
-  color: #00337F;
+  color: white;
   font-size: 20px;
   text-align: center;
   background-color: #55816B;
   padding: 15px;
 }
 .btn:hover {
+  color: white;
   cursor: pointer;
   opacity: 0.76;
 }
@@ -4128,6 +4129,9 @@ clear: right;}
   margin-bottom: 4%;
   display: none;
 }
+.prevForms{
+  width: 50%;
+}
 .prevForms thead{
   background-color:  #55816B;
 }
@@ -4140,8 +4144,19 @@ clear: right;}
   text-align: center;
   padding: 2%;
 }
-.prevForms tr{
-  text-align: center;
-  padding: 2%;
-}
+
 .prevForms tr:nth-child(even){background-color: #f2f2f2;}
+
+.superVisorSection .btn{
+  margin:1%;
+}
+.editBtn{
+  background: none;
+  width: 10%;
+}
+.editBtn:active{
+  border: none;
+}
+#observertable{
+  display:none;
+}

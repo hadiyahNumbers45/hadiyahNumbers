@@ -3,40 +3,48 @@
 رئيس البرامج
 @endsection
 @section('content')
-<section class="site-section pt-5" >
-  <div class="container" style="text-align: right;">
-    <h2> البرامج  </h2>
-     <table style="width: 100%">
-      <tr>
-        <td>
-          <a href="program with sign.html" class="a-block d-flex align-items-center height-md"style="background-image: url('images/2.png'); "  ></a>
-        </td>
-        <td>
-         <a href="program with sign.html" class="a-block d-flex align-items-center height-md"style="background-image: url('images/2.png'); "  ></a>
-        </td>
-        <td>
-            <a href="program with sign.html" class="a-block d-flex align-items-center height-md"style="background-image: url('images/2.png'); "  ></a>
-        </td>
-        <td>
-            <a href="program with sign.html" class="a-block d-flex align-items-center height-md"style="background-image: url('images/2.png'); "  ></a>
-        </td>
-        <td>
-            <a href="program with sign.html" class="a-block d-flex align-items-center height-md"style="background-image: url('images/2.png'); "  ></a>
-        </td>
-        </tr>
+    <div class="superVisorSection">
+      <center>
+        <button class="btn">استعراض المشرفيين الميدانين</button>
+        </br>
+        <button class="btn" onclick="document.getElementById('observertable').style.display='block'">استعراض رؤساء البرامج</button>
+      </center>
+    </div>
+    <center  id="observertable">
+      <table width="50%" class="prevForms">
+        <thead>
+          <tr>
+            <th>
+              تعديل
+            </th>
+            <th>
+              البرنامج
+            </th>
+            <th>
+              الاسم
+            </th>
+            <th>
+              الرقم التعريفي
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <button class="editBtn"><embed type="image/svg+xml" src="/images/edit-3.svg" /></button>
+            </td>
+            <td>
+              ss
+            </td>
+            <td>
+              tedt
+            </td>
+            <td>
+              test
+            </td>
+          </tr>
+        </tbody>
       </table>
-    <br/>
-    <br>
-    <div style="text-align: right;">
-      <h2>الموظفين  </h2>
-      <input type="submit" name="submit"/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <select>
-        <option value=NULL> مشرفيين ميدانين </option>
-        <option value=NULL> 2 </option>
-        <option value=NULL>3</option>
-      </select>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </div>
-</section>
+    </center>
+<br/>
 @endsection

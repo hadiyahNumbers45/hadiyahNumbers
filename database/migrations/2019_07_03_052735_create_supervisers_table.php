@@ -20,8 +20,8 @@ class CreateSupervisersTable extends Migration
             $table->string('l_name');
             $table->string('email')->unique();
             $table->string('password',255);
-            $table->integer('admin_id')->unsigned();
-            $table->integer('program_id')->unsigned();
+            $table->integer('admin_id')->unsigned()->nullable();
+            $table->integer('program_id')->unsigned()->nullable();
 
 
         });
@@ -29,8 +29,8 @@ class CreateSupervisersTable extends Migration
 
 
         Schema::table('supervisers', function($table) {
-              $table->foreign('program_id')->references('id')->on('programs');
-              $table->foreign('admin_id')->references('id')->on('admins');
+              $table->foreign('program_id')->references('id')->on('programs')->onDelete('set null');
+              $table->foreign('admin_id')->references('id')->on('admins')->onDelete('set null');
           });
 
 

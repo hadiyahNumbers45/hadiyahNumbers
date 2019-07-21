@@ -18,13 +18,13 @@ class CreateBloodOfAlgebratFormsTable extends Migration
           $table->increments('form_id')->unique();
           $table->string('date');
           $table->string('day');
-          $table->integer('observe_id')->unsigned();
+          $table->integer('observe_id')->unsigned()->nullable();
           $table->integer('count_of_agencies');
-          $table->integer('service_id')->unsigned();
+          $table->integer('service_id')->unsigned()->nullable();
       });
       Schema::table('blood__of__algebrat__forms', function($table) {
-          $table->foreign('observe_id')->references('id')->on('observers');
-           $table->foreign('service_id')->references('id')->on('services');
+          $table->foreign('observe_id')->references('id')->on('observers')->onDelete('set null');
+           $table->foreign('service_id')->references('id')->on('services')->onDelete('set null');
 
         });
     }

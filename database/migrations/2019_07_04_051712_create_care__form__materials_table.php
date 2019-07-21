@@ -18,12 +18,12 @@ class CreateCareFormMaterialsTable extends Migration
           $table->engine = 'InnoDB';
 
           $table->integer('count');
-          $table->integer('form_id')->unsigned();
-          $table->integer('material_id')->unsigned();
+          $table->integer('form_id')->unsigned()->nullable();
+          $table->integer('material_id')->unsigned()->nullable();
       });
       Schema::table('care__form__materials', function($table) {
-          $table->foreign('form_id')->references('form_id')->on('care__forms');
-           $table->foreign('material_id')->references('id')->on('materials');
+          $table->foreign('form_id')->references('form_id')->on('care__forms')->onDelete('set null');
+           $table->foreign('material_id')->references('id')->on('materials')->onDelete('set null');
 
         });
     }

@@ -16,10 +16,10 @@ class CreateTableCodesTable extends Migration
         Schema::create('table__codes', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->string('table_name');
-            $table->integer('program_id')->unsigned();
+            $table->integer('program_id')->unsigned()->nullable();
         });
         Schema::table('table__codes', function($table) {
-          $table->foreign('program_id')->references('id')->on('programs');
+          $table->foreign('program_id')->references('id')->on('programs')->onDelete('set null');
        });
     }
 

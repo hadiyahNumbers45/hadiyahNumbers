@@ -1,6 +1,9 @@
 @extends('templates.hadiyah')
 @section('title')
-رئيس البرامج
+مشرف ميداني.
+@endsection
+@section('pageTitle')
+ هدية الحاج والمتعتمر
 @endsection
 @section('content')
 	  <div class="observerMenu">

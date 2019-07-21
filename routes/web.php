@@ -98,3 +98,27 @@ Route::PATCH('/update/{id}','itController@update');
 Route::PATCH('/delete/{id}','itController@deleteUser');
 
 //end Asayel
+
+
+
+
+Route::get('views/GUIObserverInfo','GUIObserverInfoController@index');
+Route::get('/observers','GUIObserverInfoController@index');
+Route::post('/search','GUIObserverInfoController@searchid' );
+Route::post('/insert', 'Cnteoller@insert');
+/*delegation 8/7/2019*/
+
+Route::post('/test','itController@signup');
+
+
+
+//Route::get('views/GUIObserverInfo','GUIObserverInfoController@index');
+
+
+Route::get('/observers/create','GUIObserverInfoController@create');
+
+Route::post('/edit','GUIObserverInfoController@show');
+Route::post('update','GUIObserverInfoController@update');
+//Route::post('/edit','GUIObserverInfoController@edit');
+
+//Route::post('/Observersaction','GUIObserverInfoController@editObserver');

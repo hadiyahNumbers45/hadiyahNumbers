@@ -16,13 +16,13 @@ class CreateServicesMaterialsTable extends Migration
         Schema::create('services_materials', function (Blueprint $table) {
         /*    $table->bigIncrements('id');
             $table->timestamps();*/
-          $table->integer('material_id')->unsigned();
-           $table->integer('service_id')->unsigned();
+          $table->integer('material_id')->unsigned()->nullable();
+           $table->integer('service_id')->unsigned()->nullable();
 
         });
         Schema::table('services_materials', function($table) {
-           $table->foreign('material_id')->references('id')->on('materials');
-             $table->foreign('service_id')->references('id')->on('services');
+           $table->foreign('material_id')->references('id')->on('materials')->onDelete('set null');
+             $table->foreign('service_id')->references('id')->on('services')->onDelete('set null');
       });
     }
 

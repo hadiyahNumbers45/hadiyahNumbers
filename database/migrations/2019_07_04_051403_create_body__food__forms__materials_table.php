@@ -20,12 +20,12 @@ class CreateBodyFoodFormsMaterialsTable extends Migration
           $table->integer('count');
           $table->integer('surplus');
           $table->integer('needs_of_tomorro');
-            $table->integer('form_id')->unsigned();
-            $table->integer('material_id')->unsigned();
+            $table->integer('form_id')->unsigned()->nullable();
+            $table->integer('material_id')->unsigned()->nullable();
         });
         Schema::table('body__food__forms__materials', function($table) {
-            $table->foreign('form_id')->references('form_id')->on('body__food__forms');
-             $table->foreign('material_id')->references('id')->on('materials');
+            $table->foreign('form_id')->references('form_id')->on('body__food__forms')->onDelete('set null');
+             $table->foreign('material_id')->references('id')->on('materials')->onDelete('set null');
 
           });
     }

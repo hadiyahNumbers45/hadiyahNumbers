@@ -14,17 +14,17 @@ class CreateZakaatFormInstitutionsTable extends Migration
     public function up()
     {
         Schema::create('zakaat__form__institutions', function (Blueprint $table) {
-        $table->integer('institution_id')->unsigned();
-        $table->integer('form_id')->unsigned();
+        $table->integer('institution_id')->unsigned()->nullable();
+        $table->integer('form_id')->unsigned()->nullable();
         $table->integer('count');
         $table->string('recipient');
-        
+
 
         });
 
         Schema::table('zakaat__form__institutions', function($table) {
-              $table->foreign('institution_id')->references('id')->on('institutions');
-              $table->foreign('form_id')->references('form_id')->on('atonement__and__zakaat__forms');
+              $table->foreign('institution_id')->references('id')->on('institutions')->onDelete('set null');
+              $table->foreign('form_id')->references('form_id')->on('atonement__and__zakaat__forms')->onDelete('set null');
           });
     }
 

@@ -28,13 +28,13 @@ class CreateDelegationsTable extends Migration
             $table->string('number_of_men');
             $table->string('date');
             $table->string('day');
-            $table->integer('observe_id')->unsigned();
-            $table->integer('service_id')->unsigned();
-            $table->string('observation');
+            $table->integer('observe_id')->unsigned()->nullable();
+            $table->integer('service_id')->unsigned()->nullable();
+            $table->string('observation')->nullable();
         });
         Schema::table('delegations', function($table) {
-            $table->foreign('observe_id')->references('id')->on('observers');
-             $table->foreign('service_id')->references('id')->on('services');
+            $table->foreign('observe_id')->references('id')->on('observers')->onDelete('set null');
+             $table->foreign('service_id')->references('id')->on('services')->onDelete('set null');
           });
     }
 

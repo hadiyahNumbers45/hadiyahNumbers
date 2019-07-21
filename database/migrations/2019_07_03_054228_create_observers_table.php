@@ -22,17 +22,17 @@ class CreateObserversTable extends Migration
           $table->string('l_name');
           $table->string('email')->unique();
           $table->string('password',255);
-          $table->integer('service_id')->unsigned();
-          $table->integer('superviser_id')->unsigned();
-          $table->integer('location_id')->unsigned();
+          $table->integer('service_id')->unsigned()->nullable();
+          $table->integer('superviser_id')->unsigned()->nullable();
+          $table->integer('location_id')->unsigned()->nullable();
 
 
 
       });
       Schema::table('observers', function($table) {
-           $table->foreign('service_id')->references('id')->on('services');
-            $table->foreign('superviser_id')->references('id')->on('supervisers');
-            $table->foreign('location_id')->references('id')->on('location');
+           $table->foreign('service_id')->references('id')->on('services')->onDelete('set null');
+            $table->foreign('superviser_id')->references('id')->on('supervisers')->onDelete('set null');
+            $table->foreign('location_id')->references('id')->on('location')->onDelete('set null');
 
         });
 

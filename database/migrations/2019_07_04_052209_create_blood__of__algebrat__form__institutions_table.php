@@ -14,8 +14,8 @@ class CreateBloodOfAlgebratFormInstitutionsTable extends Migration
     public function up()
     {
         Schema::create('blood__of__algebrat__form__institutions', function (Blueprint $table) {
-        $table->integer('institution_id')->unsigned();
-        $table->integer('form_id')->unsigned();
+        $table->integer('institution_id')->unsigned()->nullable();
+        $table->integer('form_id')->unsigned()->nullable();
         $table->integer('number_of_carcasses');
         $table->string('type');
         $table->string('name_of_delegate');
@@ -23,8 +23,8 @@ class CreateBloodOfAlgebratFormInstitutionsTable extends Migration
         });
 
         Schema::table('blood__of__algebrat__form__institutions', function($table) {
-              $table->foreign('institution_id')->references('id')->on('institutions');
-              $table->foreign('form_id')->references('form_id')->on('blood__of__algebrat__forms');
+              $table->foreign('institution_id')->references('id')->on('institutions')->onDelete('set null');
+              $table->foreign('form_id')->references('form_id')->on('blood__of__algebrat__forms')->onDelete('set null');
           });
     }
 
