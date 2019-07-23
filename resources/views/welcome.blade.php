@@ -7,80 +7,7 @@
 @endsection
 @section('content')
 <!--
-  <table style="width:100%">
-    <tr class="programInfo">
-      <td><a href="" alt="اقرا المزيد"><embed type="image/svg+xml" src="images/arrow-left.svg" /><a/></td>
-      <td><p>يرتكز نشاط البرنامج على تعليم اركان الاسلام وتحسين تلاوة الفاتحة وقصار السور.</p></td>
-      <td><img src="images/غذاء-الروح1.png"></td>
-    </tr>
-    <tr class="programInfo">
-      <td><a href="" alt="اقرا المزيد"><embed type="image/svg+xml" src="images/arrow-left.svg" /><a/></td>
-      <td><p>يعد برنامج غذاء البدن من اوسع برامج الجمعية تفرعًا ويراعي البرنامج  في جميع جوانبه احتياجات الفئة المستفيدة</p></td>
-      <td><img src="images/غذاء-البدن1.png"></td>
-    </tr>
-    <tr class="programInfo">
-      <td><a href="" alt="اقرا المزيد"><embed type="image/svg+xml" src="images/arrow-left.svg" /><a/></td>
-      <td><p>تضم جانبًا يتعلق بتقديم هدايا أو خدمات تتيح للحجاج والمعتمرين والزوار سهولة وتيسيرًا أثناء اداء المناسك</p></td>
-      <td><img src="images/العناية1.png"></td>
-    </tr>
-    <tr class="programInfo">
-      <td><a href="" alt="اقرا المزيد"><embed type="image/svg+xml" src="images/arrow-left.svg" /><a/></td>
-      <td><p>استقبال الحجاج والمعتمرين والزوار وتقديم الضيافة والوجبات والسقيا والهدايا لهم</p></td>
-      <td><img src="images/1مضياف.png"></td>
-    </tr>
-    <tr class="programInfo">
-      <td><a href="" alt="اقرا المزيد"><embed type="image/svg+xml" src="images/arrow-left.svg" /><a/></td>
-      <td><p>لم يستطيع تنفيذ النسك فهناك الوكالات المقرة شرعا بإخراج الكفارات أو بإناية من يستطيع تنفيذ النسك عنه </p></td>
-      <td><img src="images/1الوكالات.png"></td>
-    </tr>
-  </table>
--->
-<!--
-<table style="width:100%; margin-bottom:14%;">
-  <tr>
-    <td>
-      <div class="programCads">
-        <center>
-          <p><br/><br/><b>غذاء الروح</b>يرتكز نشاط البرنامج على تعليم اركان الاسلام وتحسين تلاوة الفاتحة وقصار السور.</p>
-          <img src="images/غذاء-الروح1.png" width="150">
-        </center>
-      </div>
-    </td>
-    <td>
-      <div class="programCads">
-        <center>
-          <p><br/><br/><b>غذاء الروح</b>يرتكز نشاط البرنامج على تعليم اركان الاسلام وتحسين تلاوة الفاتحة وقصار السور.</p>
-          <img src="images/غذاء-الروح1.png" width="150">
-        </center>
-      </div>
-    </td>
-    <td>
-      <div class="programCads">
-        <center>
-          <p><br/><br/><b>غذاء الروح</b>يرتكز نشاط البرنامج على تعليم اركان الاسلام وتحسين تلاوة الفاتحة وقصار السور.</p>
-          <img src="images/غذاء-الروح1.png" width="150">
-        </center>
-      </div>
-    </td>
-    <td>
-      <div class="programCads">
-        <center>
-          <p><br/><br/><b>غذاء الروح</b>يرتكز نشاط البرنامج على تعليم اركان الاسلام وتحسين تلاوة الفاتحة وقصار السور.</p>
-          <img src="images/غذاء-الروح1.png" width="150">
-        </center>
-      </div>
-    </td>
-    <td>
-      <div class="programCads">
-        <center>
-          <p><br/><br/><b>غذاء الروح</b>يرتكز نشاط البرنامج على تعليم اركان الاسلام وتحسين تلاوة الفاتحة وقصار السور.</p>
-          <img src="images/غذاء-الروح1.png" width="150">
-        </center>
-      </div>
-    </td>
-  </tr>
-</table>
--->
+
 <div class="containerHome">
   <center>
   <div class="programCads">
@@ -115,4 +42,19 @@
   </div>
 </div>
 </center>
+-->
+{{csrf_field()}}
+  <div class="containerHome">
+    <center>
+      @foreach ($program as $program)
+        <a href="{{url('GUIProgram/'.$program->name)}}">
+          <div class="programCads">
+            <center>
+              <p><br/><br/><b> {{$program->name}} </b>{{$program->Description}}</p>
+              <img src="{{$program->images}} " width="150">
+            </center>
+          </div>
+        </a>
+  @endforeach
+
 @endsection

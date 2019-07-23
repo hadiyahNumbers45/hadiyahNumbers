@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Program;
 use App\Service;
+use App\Observer;
 use DB;
 use App\Quotation;
 class ProgramController extends Controller
@@ -16,10 +17,10 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        //
-
-        $programs=Program::all();
-        return view('GUIProgram',compact('programs'));
+    
+       $Observer=Observer::find(1);
+       $ser=Service::all();
+      return view('test',compact('ser'));
 
     }
 
