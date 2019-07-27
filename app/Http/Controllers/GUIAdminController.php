@@ -9,6 +9,10 @@ use App\Program;
 
 class GUIAdminController extends Controller
 {
+  public function __construct()
+{
+    $this->middleware('auth:admin');
+}
     //
     public function get_superviser(){
         $supervisers=Superviser::all();
@@ -21,5 +25,9 @@ class GUIAdminController extends Controller
         return view('GUISuperviserInfo',compact('programs','supervisers'));
 
       }
-   
+      public function __construct()
+{
+    $this->middleware('auth:admin');
+}
+
 }

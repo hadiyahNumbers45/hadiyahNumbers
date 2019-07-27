@@ -18,4 +18,19 @@ class Authenticate extends Middleware
             return route('login');
         }
     }
+    protected function determineLogIn($id)
+    {
+      if ($id==11) {
+        // code...
+      }
+      elseif ($id==12) {
+        // code...
+      }
+      elseif ($id==13){
+        // code...
+      }
+      else {
+        // code...
+      }
+    }
 }

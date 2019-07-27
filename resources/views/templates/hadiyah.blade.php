@@ -45,8 +45,8 @@
 <div class="menu">
     <div class="container-fluid">
       <a class="aHome" herf="GUIit" alt="الرئيسية"><img src="/images/شعار-هدية-دقة-عالية-1.png" width="120" /></a>
-    <span style="font-size:40px;cursor:pointer; margin-top:10px;" onclick="document.getElementById('mySidenav').style.display='block'" ><embed type="image/svg+xml" src="/images/edit-3.svg" /></span>
-    <span style="cursor:pointer;font-size:40px; margin-top:10px;" onclick="document.getElementById('id01').style.display='block'"><embed type="image/svg+xml" src="/images/log-in.svg" /></span>
+    <span style="font-size:40px;cursor:pointer; margin-top:10px;" onclick="document.getElementById('id01').style.display='block'"><embed type="image/svg+xml" src="/images/edit-3.svg" /></span>
+    <span style="cursor:pointer;font-size:40px; margin-top:10px;"><a href="{{ url('/login') }}"><embed type="image/svg+xml" src="/images/log-in.svg" /></a></span>
   </div>
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a><br>
@@ -54,43 +54,7 @@
         <a href="#">تسجيل الخروج</a>
       </div>
 </div>
-
 <!--LOGIN-->
-<div id="id01" class="modal">
-  <form class="modal-content animate" method='post' action="/signin">
-
-     {{csrf_field()}}
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="/images/avatar.png" alt="Avatar" class="avatar">
-    </div>
-
-
-    <div class="container">
-      <label for="uname"><b> اسم المستخدم</b></label>
-      <input type="text" placeholder="اسم المستخدم" name="userid" required>
-
-      <br>
-
-      <label for="psw"><b>كلمة المرور</b></label>
-      <input type="password" placeholder="كلمة المرور" name="userpass" required>
-<br>
-      <button type="submit">موافق</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> تذكّرني لاحقًا
-      </label>
-    </div>
-
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">إلغاء</button>
-      <span class="psw">نسيت <a href="" onclick="document.getElementById('id02').style.display='block'">كلمة المرور؟</a></span>
-    </div>
-  </form>
-  @if(isset($msg))
- {{$msg}}
- @endif
-</div>
 <!--LOGIN END-->
 <!-- edit window-->
 <div id="id02" class="modal">
@@ -115,7 +79,9 @@
 </header>
 
 <div class="pagesContent">
+  @if (Route::has('login'))
   @displayPersonalInfo
+  @endif
   <br/><br/>
   <center><h2>@yield('pageTitle')</h2></center>
     <div class="contentPanel">

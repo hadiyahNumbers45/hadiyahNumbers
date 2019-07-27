@@ -49,10 +49,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'f_name' => ['required', 'string', 'max:255'],
-            's_name' => ['required', 'string', 'max:255'],
-            'l_name' => ['required', 'string', 'max:255'],
-            'jobName' => ['required'],
+            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -66,23 +63,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-      if ($data->jobName=='observer') {
-        return observer::create([
-          'f_name' => $data['f_name'],
-          's_name' => $data['s_name'],
-          'l_name' => $data['l_name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-      }
-      else
         return User::create([
-          'f_name' => $data['f_name']
-          's_name' => $data['s_name']
-          'l_name' => $data['l_name']
-          'jobName' => ['required'],
-          'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-          'password' => ['required', 'string', 'min:8', 'confirmed'],
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

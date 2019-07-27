@@ -134,7 +134,7 @@ Route::post('update','GUIObserverInfoController@update');
 
 
 
-
+Auth::routes();
 
 
 

@@ -20,7 +20,10 @@ class GUISupervisorController extends Controller
 
     }
 
-
+    public function __construct()
+    {
+        $this->middleware('auth:superviser');
+    }
 
     public function addMaterials(Request $request)
     {

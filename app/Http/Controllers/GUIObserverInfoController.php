@@ -12,7 +12,10 @@ use DB;
 
 class GUIObserverInfoController extends Controller
 {
-
+  public function __construct()
+  {
+      $this->middleware('auth:superviser');
+  }
   public function index(){
 
  //var $locations = array();
