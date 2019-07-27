@@ -61,8 +61,8 @@ class itController extends Controller
   public function signinusers(Request $req)
   {
 
-$req->userpass=md5($req->userpass);
-$msg;
+    $req->userpass=md5($req->userpass);
+    $msg;
     $user_id = IT::where('id','LIKE',$req->userid)->get();
     $password_id = IT::where('password','LIKE',$req->userpass)->get();
 //echo $req->userpass;
@@ -102,11 +102,11 @@ $msg;
 
 
                   if($user->id==$req->userid && $user->password==$req->userpass){
-                      return view('GUIObserver')->with(compact($user_id));
+                      return view('GUIObserver')->with(compact('user_id'));
 
                   }else {
                     $msg='Not found. Try to signin again !';
-                      return $user;
+                      return "dfgsdfgdfgddhh";
                   }
         }else{
             $msg='account not  found. Try to signin again !';

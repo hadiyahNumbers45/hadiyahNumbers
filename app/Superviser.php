@@ -8,7 +8,7 @@ class Superviser extends Model
 {
     //
     public $incrementing=false;
-    protected $fillable=['id','f_name','s_name','l_name','email'];
+    protected $fillable=['f_name','s_name','l_name','email'];
     protected $hidden = ['password'];
     public $timestamps=false;
 
