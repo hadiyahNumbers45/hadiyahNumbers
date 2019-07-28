@@ -64,6 +64,7 @@ observer informaiton
           <thead>
               <tr>
                    <th></th>
+                   <th>نقطة الاتصال </th>
                    <th>الموقع </th>
                    <th>الخدمة </th>
                    <th>اسم المشرف الميداني </th>
@@ -81,14 +82,15 @@ observer informaiton
 
                          <td> <form action='/edit' method='post'>
                                {{ csrf_field() }}
-                           <button type="submit" name="observer_id" value='{{$observer->id}}'> Edit </button>
+                           <button type="submit" name="observer_id" value='{{$observer->id}}'> تعديل  </button>
 
                          </form>
                          </td>
                 <!--   <td> <a href="edit/{{ $observer->id }}"  data-toggle="tooltip" class="btn btn-primary" class="edit" onclick="openForm()"><i class="material-icons">&#xE254;</i></a></td>
                 -->         @if(isset($locations[$observer->id]))
-                            <td><span class="status text-success">&bull;</span>{{$locations[$observer->id]->location}}</td>
-                            <td><span class="status text-success">&bull;</span>{{$locations[$observer->id]->connection_point}}</td>
+                            <td></span>{{$locations[$observer->id]->connection_point}}<span class="status text-success">&nbsp;&bull;</td>
+                            <td>{{$locations[$observer->id]->location}}<span class="status text-success">&nbsp;&bull;</span></td>
+
                             @else
                             <td><span class="status text-success">&bull;</span></td>
                             <td><span class="status text-success">&bull;</span></td>
@@ -98,7 +100,7 @@ observer informaiton
                             @else
                               <td></td>
                                 @endif
-                            <td>{{$observer->f_name}}</td>
+                            <td>{{$observer->f_name}} {{$observer->s_name}} {{$observer->l_name}}</td>
                             <td>{{$observer->id}}</td>
                             <td></td>
                       </tr>
